@@ -141,7 +141,7 @@
                 var _this = this;
 
                 $.ajax({
-                    url:'http://localhost:9000/login/removeFile',
+                    url:'https://boiling-dawn-57759.herokuapp.com/login/removeFile',
                     type: 'get',
                     data:{
                         user: $('.userNode').val(),
@@ -176,7 +176,7 @@
 
                 var xhr = new XMLHttpRequest();
 
-                xhr.open('post', 'http://localhost:9000/login/getfiles', true);
+                xhr.open('post', 'https://boiling-dawn-57759.herokuapp.com/login/getfiles', true);
 
                 xhr.send(FromNode);
 
@@ -214,7 +214,7 @@
         $('.btn-login').on({
             click() {
                 $.ajax({
-                    url: 'http://localhost:9000/login/login',
+                    url: 'https://boiling-dawn-57759.herokuapp.com/login/login',
                     type: 'get',
                     data: {
                         'user': $('.userNode').val(),
@@ -250,7 +250,7 @@
         $('.btn-res').on({
             click() {
                 $.ajax({
-                    url: 'http://localhost:9000/login/res',
+                    url: 'https://boiling-dawn-57759.herokuapp.com/login/res',
                     type: 'get',
                     data: {
                         'user': $('.userNode').val(),

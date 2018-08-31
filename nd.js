@@ -11,7 +11,9 @@ const loginRouter = express.Router();
 
 const showRouter = express.Router();
 
-server.listen(9000);
+var port = process.env.PORT || 9000;
+
+server.listen(port);
 
 server.use(Multer({dest:'./allfiles'}).any());
 server.use('/login', loginRouter);

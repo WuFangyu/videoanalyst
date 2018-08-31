@@ -103,7 +103,7 @@
             'click': function(){
                 $('.outNode').removeClass('hide');
                 if(this.innerHTML == "Login/Register"){
-                    location.href = 'http://localhost:9000/index.html'
+                    location.href = 'https://boiling-dawn-57759.herokuapp.com/index.html'
                 }else{
                     this.innerHTML = "Login/Register";
                 }
@@ -144,7 +144,7 @@
                 var _this = this;
                 
                 $.ajax({
-                    url: 'http://localhost:9000/show/addDownload',
+                    url: 'https://boiling-dawn-57759.herokuapp.com/show/addDownload',
                     type: 'get',
                     data:{
                         hash: $(_this).attr('hash'),
@@ -167,7 +167,7 @@
         
 
         $.ajax({
-            url: 'http://localhost:9000/show/showFiles',
+            url: 'https://boiling-dawn-57759.herokuapp.com/show/showFiles',
             type: 'get',
             success: function(data){
                 console.log(data);
