@@ -4,6 +4,7 @@
   "description": "online cloud!",
   "main": "nd.js",
   "scripts": {
+    "start": "node nd.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Fangyu",
