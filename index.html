@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>myCloud</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<h1>MyCloud</h1>
+
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-3 col-md-offset-1'>
+            <input type='button' class='btn btn-default btn btn-primary my-btn'
+                   value='login/register' data-toggle="modal" data-target=".login">
+            <p class='namesNode hide'>Welcome
+                <span></span></p>
+        </div>
+    </div>
+</div>
+
+<div class="container fileShowNode hide">
+    <table class='table text-center table-hover'>
+        <thead>
+        <tr>
+            <td>Number</td>
+            <td>Name</td>
+            <td>Size</td>
+            <td>Time</td>
+            <td>Download_time</td>
+            <td>Deleted</td>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <!--
+            <td>1</td>
+            <td>asdada.jpg</td>
+            <td>21mb</td>
+            <td>2017/22</td>
+            <td>0</td>
+            <td><input type="button" name="" class='btn btn-default btn-danger btn-xs' value='delete'></td>
+            -->
+
+        </tr>
+        </tbody>
+    </table>
+    <form class="form-inline">
+        <div class="form-group">
+            <input type="file" class="fsNode" name="">
+        </div>
+        <div class="form-group">
+            <input type="button" name="" class="btn btn-default btn-primary btn-xs btn-setFiles" value="upload" data-toggle="modal" data-target=".upload">
+        </div>
+    </form>
+
+
+</div>
+
+
+<div class="modal fade uploaded" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Notice</h4>
+            </div>
+            <div class="modal-body bodytextNode">
+                <p>One fine body&hellip;</p>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+<div class="modal fade login" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Login/Register</h4>
+            </div>
+            <div class="modal-body">
+                <form class='myForm'>
+                    <div class='form-group'>
+                        <label>UserID:</label>
+                        <input type="" name="" class='form-control userNode'>
+                    </div>
+                    <div class='form-group'>
+                        <label>Password:</label>
+                        <input type="password" name="" class='form-control passNode'>
+                    </div>
+                    <input type='button' class='btn btn-default btn btn-primary btn-login'
+                           value='login'>
+                    <input type='button' class='btn btn-default btn btn-info btn-res'
+                           value='register'>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    (() => {
+
+        let index = 1;
+
+        function toTr(index, filesName, size, timer, download, hash){
+            var oTr = document.createElement('tr');
+
+            $(oTr).attr('hash', hash);
+
+            oTr.innerHTML =
+                `<td>${index}</td>
+                 <td>${filesName}</td>
+                 <td>${size}</td>
+                 <td>${timer}</td>
+                 <td>${download}</td>
+                 <td><input type="button" class="btn btn-default btn-danger btn-xs btn-deleteNode" value="delete" data-toggle="modal" data-target=".upload"></td>`;
+            return oTr;
+        }
+
+
+
+        $('body').on({
+            'click': function(){
+
+                var _this = this;
+
+                $.ajax({
+                    url:'http://localhost:9000/login/removeFile',
+                    type: 'get',
+                    data:{
+                        user: $('.userNode').val(),
+                        hash: $(_this.parentNode.parentNode).attr('hash')
+                    },
+
+                    success: function(data) {
+                        console.log(data);
+
+                        if(data.ok==1){
+                          //  $('.upload').modal('toggle');
+                            $('.bodytextNode p').html(data.msg);
+                            _this.parentNode.parentNode.remove();
+                        }else{
+                            $('.bodytextNode p').html(data.msg);
+                        }
+                    }
+                })
+
+            }
+        }, '.btn-deleteNode')
+
+
+
+
+        $('.btn-setFiles').on({
+            'click':function () {
+                var FromNode = new FormData();
+
+                FromNode.append('files', $('.fsNode')[0].files[0]);
+                FromNode.append('Fsnames', $('.userNode').val());
+
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('post', 'http://localhost:9000/login/getfiles', true);
+
+                xhr.send(FromNode);
+
+                xhr.onload = function(){
+                    var json = eval('('+ xhr.responseText + ')');
+
+
+                    if( json.ok == 1){
+                        $('.bodytextNode p').html('succeeded!');
+
+
+                        $('.fileShowNode tbody')[0].appendChild(
+                            toTr(index, $('.fsNode')[0].files[0].name, ($('.fsNode')[0].files[0].size/1024).toFixed(2) +'KB',json.timer,0,json.hash));
+
+                        index++;
+
+                    }else{
+                        $('.bodytextNode p').html(json.msg);
+                    }
+
+                    $('.fsNode').val('');
+                }
+            }
+        })
+
+
+        $('.my-btn').on({
+            click() {
+                $('.myForm .form-group').removeClass('has-error');
+                $('.userNode').val('');
+                $('.passNode').val('');
+            }
+        })
+
+        $('.btn-login').on({
+            click() {
+                $.ajax({
+                    url: 'http://localhost:9000/login/login',
+                    type: 'get',
+                    data: {
+                        'user': $('.userNode').val(),
+                        'pass': $('.passNode').val()
+                    },
+
+                    success: function (data) {
+                        if (data.ok == 1) {
+                            $('.login').modal('toggle');
+                            //alert(data.msg);
+                            $('.my-btn').hide();
+                            $('.namesNode').removeClass('hide');
+                            $('.namesNode span').html($('.userNode').val());
+                            $('.fileShowNode').removeClass('hide');
+
+
+                            for(var i = 0; i < data.data.length; i++){
+                                $('.fileShowNode tbody')[0].appendChild(
+                                    toTr(index, data.data[i].LastName, (data.data[i].size/1024).toFixed(2)+'KB',data.data[i].lastTime,data.data[i].download,data.data[i].hashName));
+                                index++;
+                            }
+
+                        } else {
+                            alert(data.msg);
+                            $('.myForm .form-group').addClass('has-error');
+                        }
+                    }
+                })
+            }
+        })
+
+
+        $('.btn-res').on({
+            click() {
+                $.ajax({
+                    url: 'http://localhost:9000/login/res',
+                    type: 'get',
+                    data: {
+                        'user': $('.userNode').val(),
+                        'pass': $('.passNode').val()
+                    },
+                    success: function (data) {
+                        if (data.ok == 1) {
+                            alert(data.msg);
+                        } else {
+                            alert(data.msg);
+                            $('.myForm .form-group').addClass('has-error');
+                        }
+                    }
+                })
+            }
+        })
+    })();
+</script>
+</body>
+</html>

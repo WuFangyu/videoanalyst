@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to myCloud</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<h1 style="margin-left: 30px">myCloud</h1>
+
+<div class="jumbotron">
+    <h1 style="margin-left: 30px">Welcome to myCloud!</h1>
+    <p style="margin-left: 40px">Download and upload whatever you want!</p>
+    <p style="margin-left: 40px">
+        <a class="btn btn-primary btn-lg started"  role="button">Get Started!</a>
+    </p>
+</div>
+
+
+<div class="container outNode hide">
+    <table class="table text-center table-hover">
+        <thead>
+        <tr>
+            <td>Number</td>
+            <td>uploader</td>
+            <td>Name</td>
+            <td>Size</td>
+            <td>Time</td>
+            <td>Download_time</td>
+            <td>Download</td>
+            <td>Preview</td>
+        </tr>
+        </thead>
+        <tbody>
+        <!--
+        <tr>
+            <td>1</td>
+            <td>chris</td>
+            <td>1231.jpg</td>
+            <td>1231kb</td>
+            <td>2018</td>
+            <td>0</td>
+            <td>Download</td>
+            <td>Preview</td>
+        </tr>
+        -->
+        </tbody>
+    </table>
+</div>
+
+
+<div class="modal fade abc" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Preview</h4>
+            </div>
+            <div class="modal-body">
+                <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script>
+    (()=>{
+
+        let index = 1;
+
+        function toTr(index, userName, filesName, size, timer, download, hash, type){
+            var oTr = document.createElement('tr');
+
+            oTr.innerHTML =
+                `<td>${index}</td>
+                 <td>${userName}</td>
+                 <td>${filesName}</td>
+                 <td>${size}</td>
+                 <td>${timer}</td>
+                 <td class="dw">${download}</td>
+                 <td><a role="button" class="btn btn-default btn-success btn-xs btn-downl" href="allfiles/${hash}" download="allfiles/${hash}"
+                 user="${userName}" hash="${hash}">Download</a></td>
+                 <td><input type="button" value="Preview" class="btn btn-default btn-primary btn-xs btn-deleteNode btn-show"
+                 data-toggle="modal" data-target=".abc" data-type="${type}"></td>`;
+            return oTr;
+        }
+
+
+        $('.started').on({
+            'click': function(){
+                $('.outNode').removeClass('hide');
+                if(this.innerHTML == "Login/Register"){
+                    location.href = 'http://localhost:9000/index.html'
+                }else{
+                    this.innerHTML = "Login/Register";
+                }
+            }
+        })
+
+
+
+        $('body').on({
+            click(){
+                var type = /\.gif|\.png|\.jpg|\.jpeg$/;
+
+                $('.modal-body')[0].innerHTML = '';
+
+                if(type.test($(this).attr('data-type'))){
+                    var img = new Image();
+
+                    img.className = 'img-thumbnail';
+
+                    img.style.cssText = 'max-width: 100%;max-height: 100%';
+
+                    img.src = this.parentNode.parentNode.querySelector('.btn-downl').href;
+
+                    img.onload = function(){
+                        $('.modal-body')[0].appendChild(img)
+                    }
+                }
+            }
+
+        }, '.btn-show')
+
+
+
+        
+        $('body').on({
+            click(){
+
+                var _this = this;
+                
+                $.ajax({
+                    url: 'http://localhost:9000/show/addDownload',
+                    type: 'get',
+                    data:{
+                        hash: $(_this).attr('hash'),
+                        user: $(_this).attr('user'),
+                    },
+                    success: function (data) {
+                        if(data.ok == 1){
+                            alert(data.msg);
+                            var downloadNode = _this.parentNode.parentNode.querySelector('.dw');
+                            downloadNode.innerHTML = Number(downloadNode.innerHTML) + 1;
+                        }else{
+                            alert(data.msg);
+                        }
+                        
+                    }
+                })
+            }
+            
+        }, '.btn-downl')
+        
+
+        $.ajax({
+            url: 'http://localhost:9000/show/showFiles',
+            type: 'get',
+            success: function(data){
+                console.log(data);
+                for(var i = 0; i < data.data.length; i++){
+                    $('.outNode tbody')[0].appendChild(toTr(index, data.data[i].user, data.data[i].LastName,
+                        (data.data[i].size/1024).toFixed(2)+'KB', data.data[i].lastTime, data.data[i].download,
+                    data.data[i].hashName, data.data[i].type));
+                    index++;
+                }
+
+            }
+        })
+
+    })();
+</script>
+</body>
+</html>
