@@ -24,10 +24,10 @@ server.use('/show', showRouter);
 showRouter.use('/showFiles', (req, res)=>{
 
     var Pool = mysql.createPool({
-        'host': 'localhost',
-        'user': 'root',
-        'password': 'password',
-        'database': 'mycloud'
+        'host': 'us-cdbr-iron-east-01.cleardb.net',
+        'user': 'beb0ce369366d7',
+        'password': 'ff3e14a6',
+        'database': 'heroku_326ec9a75511f55'
     });
 
     Pool.getConnection((err, c)=>{
@@ -59,10 +59,10 @@ showRouter.use('/addDownload', (req, res)=>{
     console.log(req.query.hash);
 
     var Pool = mysql.createPool({
-        'host': 'localhost',
-        'user': 'root',
-        'password': 'password',
-        'database': 'mycloud'
+        'host': 'us-cdbr-iron-east-01.cleardb.net',
+        'user': 'beb0ce369366d7',
+        'password': 'ff3e14a6',
+        'database': 'heroku_326ec9a75511f55'
     });
 
     Pool.getConnection((err, c)=>{
@@ -121,10 +121,10 @@ loginRouter.use('/getfiles', (req,res)=>{
             console.log(err);
         }else{
             var Pool = mysql.createPool({
-                'host': 'localhost',
-                'user': 'root',
-                'password': 'password',
-                'database': 'mycloud'
+                'host': 'us-cdbr-iron-east-01.cleardb.net',
+                'user': 'beb0ce369366d7',
+                'password': 'ff3e14a6',
+                'database': 'heroku_326ec9a75511f55'
             });
 
             Pool.getConnection((err, c)=>{
@@ -161,10 +161,10 @@ loginRouter.use('/getfiles', (req,res)=>{
 loginRouter.use('/res', (req,res)=>{
     //console.log(req.query);
     var Pool = mysql.createPool({
-        'host': 'localhost',
-        'user': 'root',
-        'password': 'password',
-        'database': 'mycloud'
+        'host': 'us-cdbr-iron-east-01.cleardb.net',
+        'user': 'beb0ce369366d7',
+        'password': 'ff3e14a6',
+        'database': 'heroku_326ec9a75511f55'
     });
 
     Pool.getConnection((err, c)=>{
@@ -235,10 +235,10 @@ loginRouter.use('/removeFile', (req, res)=>{
             res.send({'ok':0, 'msg': 'failed'});
         }else{
             var Pool = mysql.createPool({
-                'host': 'localhost',
-                'user': 'root',
-                'password': 'password',
-                'database': 'mycloud'
+                'host': 'us-cdbr-iron-east-01.cleardb.net',
+                'user': 'beb0ce369366d7',
+                'password': 'ff3e14a6',
+                'database': 'heroku_326ec9a75511f55'
             });
 
             Pool.getConnection((err, c)=>{
@@ -278,10 +278,10 @@ loginRouter.use('/removeFile', (req, res)=>{
 loginRouter.use('/login', (req,res)=>{
     //console.log(req.query);
     var Pool = mysql.createPool({
-        'host': 'localhost',
-        'user': 'root',
-        'password': 'password',
-        'database': 'mycloud'
+        'host': 'us-cdbr-iron-east-01.cleardb.net',
+        'user': 'beb0ce369366d7',
+        'password': 'ff3e14a6',
+        'database': 'heroku_326ec9a75511f55'
     });
 
     Pool.getConnection((err, c)=>{
