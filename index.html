@@ -4,24 +4,54 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>myCloud</title>
-
+    <title>MyCloud</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
 </head>
-<body>
-<h1>MyCloud</h1>
+
+<h1 style="margin-left: 5%; color: #2aabd2">MyCloud</h1>
+<a style="float: right; margin-right: 10%; margin-bottom: 1%;" href="https://boiling-dawn-57759.herokuapp.com/show.html" class="btn btn-info _dashboard hide">Go to the Dashboard!</a>
+
+<ul style="margin-left: 30%;" class="nav nav-pills my-nav">
+    <li role="presentation"><a href="https://boiling-dawn-57759.herokuapp.com/show.html">Go to the Dashboard</a></li>
+    <li role="presentation"><a href="#"  data-toggle="modal" data-target=".login">Login/Register</a></li>
+    <li role="presentation"><a href="#">Other features updating</a></li>
+</ul>
+
+<!--
+<div class="form-group">
+    <input style="margin-left:90px; float: top; font-size:20px;" type="button" name="" class="btn btn-default btn-primary btn-setFiles dashboard" value="Go to the Dashboard!">
+</div>
+-->
 
 <div class='container'>
     <div class='row'>
         <div class='col-md-3 col-md-offset-1'>
-            <input type='button' class='btn btn-default btn btn-primary my-btn'
+            <!--
+            <input type='button' class='btn btn-default btn btn-primary my-btn' style="float:right; margin-right: 200px;"
                    value='login/register' data-toggle="modal" data-target=".login">
-            <p class='namesNode hide'>Welcome
-                <span></span></p>
+            -->
         </div>
     </div>
 </div>
+
+
+<!--
+<h1 style="margin-left: 30px">
+    <p style="float: top; font-size: 30px" class='namesNode hide'>Welcome
+        <span></span>
+    </p>
+</h1>
+-->
+
+
+<div class="jumbotron">
+    <h1 style="margin-left: 30px" class="welcome">Welcome to MyCloud!</h1>
+    <h1 style="margin-left: 30px" class='namesNode hide'>Hello
+        <span></span>
+    </h1>
+    <p style="margin-left: 40px">Download and upload whatever you want!</p>
+</div>
+
 
 <div class="container fileShowNode hide">
     <table class='table text-center table-hover'>
@@ -133,6 +163,12 @@
             return oTr;
         }
 
+        /*
+        $('.dashboard').on({
+            'click': function(){
+                location.href = 'http://localhost:9000/show.html'
+            }
+        })*/
 
 
         $('body').on({
@@ -229,6 +265,9 @@
                             $('.namesNode').removeClass('hide');
                             $('.namesNode span').html($('.userNode').val());
                             $('.fileShowNode').removeClass('hide');
+                            $('.my-nav').addClass('hide');
+                            $('._dashboard').removeClass('hide');
+                            $('.welcome').addClass('hide');
 
 
                             for(var i = 0; i < data.data.length; i++){
