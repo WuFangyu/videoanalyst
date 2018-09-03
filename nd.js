@@ -21,6 +21,41 @@ server.use('/show', showRouter);
 
 
 
+showRouter.use('/file_search', (req, res)=>{
+
+    var Pool = mysql.createPool({
+        'host': 'us-cdbr-iron-east-01.cleardb.net',
+        'user': 'beb0ce369366d7',
+        'password': 'ff3e14a6',
+        'database': 'heroku_326ec9a75511f55'
+    });
+
+    Pool.getConnection((err, c)=>{
+
+        if(err){
+            console.log(err);
+            res.send({'ok':0, 'msg': 'database failed'});
+            c.end();
+        }else{
+            c.query('SELECT * FROM `allFiles` WHERE `LastName` LIKE "%'+req.query.key+'%" OR `type` LIKE "%'+req.query.key+'%" OR `user` LIKE "%'+req.query.key+'%";', (err, data)=>{
+                if(err){
+                    console.log(err);
+                    res.send({'ok':0, 'msg': 'database failed'});
+                    c.end();
+                }else{
+                    res.send({'ok': 1, data:data});
+                    console.log(data);
+                };
+                c.end();
+            })
+        }
+
+    })
+
+});
+
+
+
 showRouter.use('/showFiles', (req, res)=>{
 
     var Pool = mysql.createPool({

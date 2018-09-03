@@ -17,8 +17,17 @@
     <h1 style="margin-left: 30px">Dashboard</h1>
     <p style="margin-left: 40px">Download and upload whatever you want!</p>
     <p style="margin-left: 40px">
-        <a class="btn btn-primary btn-lg started"  role="button">Get Started!</a>
+        <a class="btn btn-primary btn-lg started" role="button">Get Started!</a>
     </p>
+</div>
+
+
+<div style="float: right; margin-right: 10%" class="search_box hide">
+    <label style="margin-right: 10px;">Search files:</label>
+    <input type="text" style="color: #2aabd2" class="search">
+    <button type="submit" style="font-size: 15px"  class="btn btn-primary btn-info search_button btn-xs">
+        search
+    </button>
 </div>
 
 
@@ -58,7 +67,8 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title">Preview</h4>
             </div>
             <div class="modal-body">
@@ -75,15 +85,13 @@
 </div><!-- /.modal -->
 
 
-
 <script src="./js/jquery.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
 <script>
-    (()=>{
+    (() => {
 
-        let index = 1;
 
-        function toTr(index, userName, filesName, size, timer, download, hash, type){
+        function toTr(index, userName, filesName, size, timer, download, hash, type) {
             var oTr = document.createElement('tr');
 
             oTr.innerHTML =
@@ -101,35 +109,69 @@
         }
 
 
+        $('.search_button').on({
+            'click': function () {
+                var text = $('.search').val();
+
+                console.log(text);
+
+                if (text == '') {
+                    alert("Please enter the key word.")
+                } else {
+                    $.ajax({
+                        url: 'https://boiling-dawn-57759.herokuapp.com/show/file_search',
+                        type: 'get',
+                        data: {
+                            'key': text,
+                        },
+                        success:
+                            function (data) {
+                                let index = 1;
+                                console.log(data);
+                                $('.outNode tbody').empty();
+                                for (var i = 0; i < data.data.length; i++) {
+                                    $('.outNode tbody')[0].appendChild(toTr(index, data.data[i].user, data.data[i].LastName,
+                                        (data.data[i].size / 1024).toFixed(2) + 'KB', data.data[i].lastTime, data.data[i].download,
+                                        data.data[i].hashName, data.data[i].type));
+                                    index++;
+                                }
+
+                            }
+                    })
+                }
+            }
+        })
+
+
         $('.started').on({
-            'click': function(){
+            'click': function () {
                 $('.outNode').removeClass('hide');
-                if(this.innerHTML == "Login/Register"){
+                $('.search_box').removeClass('hide');
+                if (this.innerHTML == "Login/Register") {
                     location.href = 'https://boiling-dawn-57759.herokuapp.com/index.html'
-                }else{
+                } else {
                     this.innerHTML = "Login/Register";
                 }
             }
         })
 
 
-
         $('body').on({
-            click(){
+            click() {
                 var type = /\.gif|\.png|\.jpg|\.jpeg$|\.JPG$|\.JPEG$/;
 
                 $('.modal-body')[0].innerHTML = '';
 
-                if(type.test($(this).attr('data-type'))){
+                if (type.test($(this).attr('data-type'))) {
                     var img = new Image();
 
                     img.className = 'img-thumbnail';
 
-                    img.style.cssText = 'max-width: 100%;max-height: 100%';
+                    img.style.cssText = 'max-width: 100%; max-height: 100%';
 
                     img.src = this.parentNode.parentNode.querySelector('.btn-downl').href;
 
-                    img.onload = function(){
+                    img.onload = function () {
                         $('.modal-body')[0].appendChild(img)
                     }
                 }
@@ -138,52 +180,73 @@
         }, '.btn-show')
 
 
-
-        
         $('body').on({
-            click(){
+            click() {
 
                 var _this = this;
-                
+
                 $.ajax({
                     url: 'https://boiling-dawn-57759.herokuapp.com/show/addDownload',
                     type: 'get',
-                    data:{
+                    data: {
                         hash: $(_this).attr('hash'),
                         user: $(_this).attr('user'),
                     },
                     success: function (data) {
-                        if(data.ok == 1){
+                        if (data.ok == 1) {
                             alert(data.msg);
                             var downloadNode = _this.parentNode.parentNode.querySelector('.dw');
                             downloadNode.innerHTML = Number(downloadNode.innerHTML) + 1;
-                        }else{
+                        } else {
                             alert(data.msg);
                         }
-                        
+
                     }
                 })
             }
-            
+
         }, '.btn-downl')
-        
 
-        $.ajax({
-            url: 'https://boiling-dawn-57759.herokuapp.com/show/showFiles',
-            type: 'get',
-            success: function(data){
-                console.log(data);
-                for(var i = 0; i < data.data.length; i++){
-                    $('.outNode tbody')[0].appendChild(toTr(index, data.data[i].user, data.data[i].LastName,
-                        (data.data[i].size/1024).toFixed(2)+'KB', data.data[i].lastTime, data.data[i].download,
-                    data.data[i].hashName, data.data[i].type));
-                    index++;
-                }
 
+
+        $('.search').focusout(function(){
+            console.log(this.innerHTML);
+
+            if(this.innerHTML == ''){
+                reload_show();
             }
-        })
+        });
+
+
+
+        function reload_show() {
+
+            $.ajax({
+                url: 'https://boiling-dawn-57759.herokuapp.com/show/showFiles',
+                type: 'get',
+                success: function (data) {
+                    $('.outNode tbody').empty();
+                    let index = 1;
+                    console.log(data);
+                    for (var i = 0; i < data.data.length; i++) {
+                        $('.outNode tbody')[0].appendChild(toTr(index, data.data[i].user, data.data[i].LastName,
+                            (data.data[i].size / 1024).toFixed(2) + 'KB', data.data[i].lastTime, data.data[i].download,
+                            data.data[i].hashName, data.data[i].type));
+                        index++;
+                    }
+
+                }
+            })
+        }
+
+        reload_show();
+
 
     })();
+
+
+
+
 </script>
 </body>
 </html>
