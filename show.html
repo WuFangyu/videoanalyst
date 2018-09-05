@@ -23,6 +23,9 @@
         <span style="color: orangered; font-weight: bold; font-family: 'serif'; font-size: 30px">6 minutes</span>
         since uploaded!
     </p>
+    <p>
+        (Server's time-zone is America/Toronto, other time-zones may cause some errors.)
+    </p>
     <p style="margin-left: 40px">
         <a class="btn btn-primary btn-lg started" role="button">Get Started!</a>
     </p>
@@ -103,14 +106,13 @@
             var mytime = new Date(timer);
             var cur_time = new Date();
             var diff = (cur_time - mytime)/(1000*60);
+            var time_remaining = (6 - diff);
 
-            console.log(cur_time)
-
-            var time_remaining = 6 - diff;
 
             if(time_remaining<0){
                 time_remaining = 0;
             }
+
 
             time_remaining = time_remaining.toFixed();
 

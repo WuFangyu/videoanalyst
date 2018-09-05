@@ -149,7 +149,7 @@ loginRouter.use('/getfiles', (req,res)=>{
 
     var hashName = req.files[0].filename + path.parse(req.files[0].originalname).ext;
 
-    var thisTime = new Date().toLocaleDateString()+' '+new Date().toLocaleTimeString();
+    var thisTime = new Date().toLocaleDateString()+' '+ new Date().toLocaleTimeString();
 
     fs.rename(req.files[0].path, newName, (err)=>{
         if(err){
