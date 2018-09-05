@@ -12,7 +12,7 @@
     <![endif]-->
 </head>
 <body>
-<h1 style="margin-left: 3%; color: #2aabd2">
+<h1 style="margin-left: 3%; color: #2aabd2" class="click-icon">
     <img src="favicon.ico" style="width:6%">
     InstantCloud
 </h1>
@@ -96,10 +96,33 @@
 </div><!-- /.modal -->
 
 
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Offered by:
+        <a>Fangyu Wu</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
 <script src="./js/jquery.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
 <script>
     (() => {
+        
+        
+        $('.click-icon').on({
+            
+            'click':function () {
+                location.href = ('https://instantcloud.herokuapp.com/index.html');
+            }
+            
+        })
+        
+        
 
         function toTr(index, userName, filesName, size, timer, download, hash, type) {
             var oTr = document.createElement('tr');
