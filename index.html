@@ -4,15 +4,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MyCloud</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+    <title>InstantCloud</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<h1 style="margin-left: 5%; color: #2aabd2">MyCloud</h1>
-<a style="float: right; margin-right: 10%; margin-bottom: 1%;" href="https://boiling-dawn-57759.herokuapp.com/show.html" class="btn btn-info _dashboard hide">Go to the Dashboard!</a>
+<h1 style="margin-left: 3%; color: #2aabd2">
+    <img src="favicon.ico" style="width:6%">
+    InstantCloud
+</h1>
+<a style="float: right; margin-right: 10%; margin-bottom: 1%;" href="https://instantcloud.herokuapp.com/show.html" class="btn btn-info _dashboard hide">Go to the Dashboard!</a>
 
 <ul style="margin-left: 30%;" class="nav nav-pills my-nav">
-    <li role="presentation"><a href="https://boiling-dawn-57759.herokuapp.com/show.html">Go to the Dashboard</a></li>
+    <li role="presentation"><a href="https://instantcloud.herokuapp.com/show.html">Go to the Dashboard</a></li>
     <li role="presentation"><a href="#"  data-toggle="modal" data-target=".login">Login/Register</a></li>
     <li role="presentation"><a href="#">Other features updating</a></li>
 </ul>
@@ -45,7 +49,7 @@
 
 
 <div class="jumbotron">
-    <h1 style="margin-left: 30px" class="welcome">Welcome to MyCloud!</h1>
+    <h1 style="margin-left: 30px" class="welcome">Welcome to InstantCloud!</h1>
     <h1 style="margin-left: 30px" class='namesNode hide'>Hello
         <span></span>
     </h1>
@@ -171,7 +175,7 @@
                 var _this = this;
 
                 $.ajax({
-                    url:'https://boiling-dawn-57759.herokuapp.com/login/removeFile',
+                    url:'https://instantcloud.herokuapp.com/login/removeFile',
                     type: 'get',
                     data:{
                         user: $('.userNode').val(),
@@ -206,7 +210,7 @@
 
                 var xhr = new XMLHttpRequest();
 
-                xhr.open('post', 'https://boiling-dawn-57759.herokuapp.com/login/getfiles', true);
+                xhr.open('post', 'https://instantcloud.herokuapp.com/login/getfiles', true);
 
                 xhr.send(FromNode);
 
@@ -245,7 +249,7 @@
         $('.btn-login').on({
             click() {
                 $.ajax({
-                    url: 'https://boiling-dawn-57759.herokuapp.com/login/login',
+                    url: 'https://instantcloud.herokuapp.com/login/login',
                     type: 'get',
                     data: {
                         'user': $('.userNode').val(),
@@ -284,7 +288,7 @@
         $('.btn-res').on({
             click() {
                 $.ajax({
-                    url: 'https://boiling-dawn-57759.herokuapp.com/login/res',
+                    url: 'https://instantcloud.herokuapp.com/login/res',
                     type: 'get',
                     data: {
                         'user': $('.userNode').val(),

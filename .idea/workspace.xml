@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d94a59e-c032-4a65-99f5-ac4182001e06" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/show.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -58,12 +58,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="8" />
+          <entry key="html" value="1554" />
+          <entry key="js" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="8" />
+          <entry key="HTML" value="1554" />
+          <entry key="JavaScript" value="30" />
         </counts>
       </usages-collector>
     </session>
@@ -73,10 +75,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+            <state relative-caret-position="261">
+              <caret line="290" column="61" selection-start-line="290" selection-start-column="61" selection-end-line="290" selection-end-column="61" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#h1#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h1#0;n#div#1;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h1#1;n#div#1;n#html#0;n#!!top" expanded="true" />
@@ -86,24 +89,26 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nd.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
+            <state relative-caret-position="19">
               <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/show.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="158" column="22" lean-forward="true" selection-start-line="158" selection-start-column="22" selection-end-line="158" selection-end-column="22" />
+            <state relative-caret-position="251">
+              <caret line="260" column="57" selection-start-line="260" selection-start-column="57" selection-end-line="260" selection-end-column="57" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -122,7 +127,6 @@
       <find>removeClass</find>
       <find>9000</find>
       <find>http</find>
-      <find>https</find>
       <find>upload</find>
       <find>login/regi</find>
       <find>jpg</find>
@@ -130,9 +134,17 @@
       <find>save</find>
       <find>localhost</find>
       <find>loca</find>
-      <find>local</find>
       <find>preview</find>
       <find>btn-show</find>
+      <find>boiling</find>
+      <find>check-table</find>
+      <find>https</find>
+      <find>oTr</find>
+      <find>toTr</find>
+      <find>btn-downl</find>
+      <find>toFixed</find>
+      <find>cloud</find>
+      <find>local</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,8 +154,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/nd.js" />
         <option value="$PROJECT_DIR$/show.html" />
+        <option value="$PROJECT_DIR$/nd.js" />
       </list>
     </option>
   </component>
@@ -163,10 +175,9 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
-    <option name="height" value="809" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -251,12 +262,12 @@
       <workItem from="1535865879168" duration="216000" />
       <workItem from="1535890399204" duration="2302000" />
       <workItem from="1535988392141" duration="27000" />
-      <workItem from="1536098327880" duration="459000" />
+      <workItem from="1536098327880" duration="8181000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50751000" />
+    <option name="totallyTimeSpent" value="58473000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -268,7 +279,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="809" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10288936" />
@@ -300,10 +311,11 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        <state relative-caret-position="261">
+          <caret line="290" column="61" selection-start-line="290" selection-start-column="61" selection-end-line="290" selection-end-column="61" />
           <folding>
             <element signature="n#style#0;n#h1#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#h1#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h1#0;n#div#1;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h1#1;n#div#1;n#html#0;n#!!top" expanded="true" />
@@ -312,23 +324,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nd.js">
+    <entry file="file://$PROJECT_DIR$/show.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="251">
+          <caret line="260" column="57" selection-start-line="260" selection-start-column="57" selection-end-line="260" selection-end-column="57" />
+          <folding>
+            <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/show.html">
+    <entry file="file://$PROJECT_DIR$/nd.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="158" column="22" lean-forward="true" selection-start-line="158" selection-start-column="22" selection-end-line="158" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="19">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
