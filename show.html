@@ -30,7 +30,7 @@
 <div class="jumbotron">
     <h1 style="margin-left: 40px">Dashboard</h1>
     <p style="margin-left: 40px">All Files will be unavailable after
-        <span style="color: orangered; font-weight: bold; font-family: 'serif'; font-size: 30px">6 minutes</span>
+        <span style="color: orangered; font-weight: bold; font-family: 'serif'; font-size: 30px">30 minutes</span>
         since uploaded!
     </p>
     <p style="margin-left: 40px">
@@ -138,7 +138,7 @@
             var mytime = new Date(timer);
             var cur_time = new Date();
             var diff = (cur_time - mytime)/(1000*60);
-            var time_remaining = (6 - diff);
+            var time_remaining = (30 - diff);
 
 
             if(time_remaining<0){
