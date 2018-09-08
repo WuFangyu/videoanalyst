@@ -8,9 +8,14 @@
     <title>InstantCloud</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
+<style>
+    ul{
+        list-style-type: none;
+    }
+</style>
 
 
-<h1 style="margin-left: 3%; color: #2aabd2">
+<h1 style="margin-left: 3%; color: #2aabd2" class="click-icon">
     <img src="favicon.ico" style="width:6%">
     InstantCloud
 </h1>
@@ -50,7 +55,7 @@
 
 
 <div class="jumbotron">
-    <h1 style="margin-left: 30px" class="welcome">Welcome to InstantCloud!</h1>
+    <h1 style="margin-left: 30px" class="welcome">Welcome to <span style="color: #2aabd2; font-family:serif; font-weight: bold;">InstantCloud!</span></h1>
     <h1 style="margin-left: 30px" class='namesNode hide'>Hello
         <span></span>
     </h1>
@@ -143,6 +148,18 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+<div class="" style="margin-left:6%;">
+    <a style="font-size: 30px; color:#2b669a" class="info">
+    How to use InstantCloud? (Click here)
+    </a>
+    <ul style="font-size: 25px; color:black; margin-top: 1%;" class="form-group info-content hide">
+        <li>Generally, InstantCloud is a online <span style="font-weight: bold; color:orangered">data sharing</span> and <span style="font-weight: bold; color: orangered">storage webapp</span>.</li>
+        <li>You can either upload your files to the <a style="color:orangered;" href="https://instantcloud.herokuapp.com/show.html">Dashboard</a> or a <a href="https://instantcloud.herokuapp.com/show.html" style="color:orangered;">Secret Group.</a></li>
+        <li>If you want everyone can access your file then upload it to the Dashboard.</li>
+        <li>If you want just someone can access your file then upload it to a Secret Group.</li>
+        <li>You need to <a style="color: orangered" href="#"  data-toggle="modal" data-target=".login">register</a> an account to upload your files.</li>
+    </ul>
+</div>
 
 <!-- Footer -->
 <footer class="page-footer font-small" style="margin-top: 20%">
@@ -210,6 +227,12 @@
         }, '.btn-deleteNode')
 
 
+        $('.info').on({
+            'click' : function () {
+                $('.info-content').removeClass('hide');
+            }
+        })
+
 
 
         $('.btn-setFiles').on({
@@ -260,7 +283,7 @@
         $('.btn-login').on({
             click() {
                 $.ajax({
-                    url: 'https://instantcloud.herokuapp.com/login/login',
+                    url: 'https://instantcloud.herokuapp.com/login',
                     type: 'get',
                     data: {
                         'user': $('.userNode').val(),
@@ -316,6 +339,17 @@
                 })
             }
         })
+
+
+        $('.click-icon').on({
+
+            'click':function () {
+                location.href = ('https://instantcloud.herokuapp.com/index.html');
+            }
+
+        })
+
+
     })();
 </script>
 </body>

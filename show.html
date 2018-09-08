@@ -28,18 +28,33 @@
 </h1>
 
 <div class="jumbotron">
-    <h1 style="margin-left: 40px">Dashboard</h1>
-    <p style="margin-left: 40px">All Files will be unavailable after
+    <h1 style="margin-left: 40px" class="dashboard">Dashboard</h1>
+    <p style="margin-left: 40px" class="dashboard-content">All Files in the dashboard will be unavailable after
         <span style="color: orangered; font-weight: bold; font-family: 'serif'; font-size: 30px">30 minutes</span>
         since uploaded!
     </p>
-    <p style="margin-left: 40px">
+    <p style="margin-left: 40px; color: orangered; font-weight: bold; font-family: 'serif'; font-size: 25px" class="group-content hide">Feel free to upload/download any files within your group!
+    </p>
+    <p style="margin-left: 40px" class="error-content">
         (Server's time-zone is America/Toronto, other time-zones may cause some errors.)
     </p>
     <p style="margin-left: 40px">
         <a class="btn btn-primary btn-lg started" role="button">Get Started!</a>
+        <a class="btn btn-info btn-lg create_a_group" role="button" data-toggle="modal" data-target=".create_group">Create a Group</a>
+        <a class="btn btn-success btn-lg goto_a_group" role="button" data-toggle="modal" data-target=".goto_group">Go to a Group</a>
+        <a class="btn btn-primary btn-lg manage hide" role="button" data-toggle="modal" data-target=".manage2">login here to upload files</a>
     </p>
 </div>
+
+
+<form class="form-inline upload hide" style="margin:2%; text-align: center">
+    <div class="form-group">
+        <input type="file" class="fsNode">
+    </div>
+    <div class="form-group">
+        <a class="btn btn-xs btn-success btn-setFiles" role="button">upload</a>
+    </div>
+</form>
 
 
 <div style="float: right; margin-right: 10%" class="search_box hide">
@@ -49,6 +64,112 @@
         search
     </button>
 </div>
+
+
+<div class="modal fade abc" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Preview</h4>
+            </div>
+            <div class="modal-body">
+                <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <!--
+                <button type="button" class="btn btn-primary">Save changes</button>
+                -->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<div class="modal fade create_group" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Create a New Group</h4>
+            </div>
+            <div class="modal-body">
+                <form class='myForm'>
+                    <div class='form-group'>
+                        <label>Group ID:</label>
+                        <input type="" name="" class='form-control userNode'>
+                    </div>
+                    <div class='form-group'>
+                        <label>Secret Code:</label>
+                        <input type="password" name="" class='form-control passNode'>
+                    </div>
+                    <input type='button' class='btn btn-default btn btn-info btn-res'
+                           value='Create'>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<div class="modal fade goto_group" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Select Group</h4>
+            </div>
+            <div class="modal-body">
+                <form class='myForm'>
+                    <div class='form-group'>
+                        <label>Group ID:</label>
+                        <input type="" name="" class='form-control userNode2'>
+                    </div>
+                    <div class='form-group'>
+                        <label>Secret Code:</label>
+                        <input type="password" name="" class='form-control passNode2'>
+                    </div>
+                    <input type='button' class='btn btn-default btn btn-info btn-login'
+                           value='Go'>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<div class="modal fade manage2" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">login</h4>
+            </div>
+            <div class="modal-body">
+                <form class='myForm'>
+                    <div class='form-group'>
+                        <label>User ID:</label>
+                        <input type="" name="" class='form-control userNode3'>
+                    </div>
+                    <div class='form-group'>
+                        <label>Password:</label>
+                        <input type="password" name="" class='form-control passNode3'>
+                    </div>
+                    <input type='button' class='btn btn-default btn btn-info manage1'
+                           value='login'>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 
 
 <div class="container outNode hide">
@@ -84,26 +205,6 @@
 </div>
 
 
-<div class="modal fade abc" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title">Preview</h4>
-            </div>
-            <div class="modal-body">
-                <p>One fine body&hellip;</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <!--
-                <button type="button" class="btn btn-primary">Save changes</button>
-                -->
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 
 
 <!-- Footer -->
@@ -121,6 +222,174 @@
 <script src="./js/bootstrap.min.js"></script>
 <script>
     (() => {
+
+
+        let index = 1;
+
+        $('.btn-setFiles').on({
+            'click':function () {
+                var FromNode = new FormData();
+
+                FromNode.append('files', $('.fsNode')[0].files[0]);
+                FromNode.append('Fsnames', $('.userNode3').val());
+                FromNode.append('Group_name', $('.userNode2').val());
+
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('post', 'https://instantcloud.herokuapp.com/show/getfiles', true);
+
+                xhr.send(FromNode);
+
+                xhr.onload = function(){
+
+                    var json = eval('('+ xhr.responseText + ')');
+
+
+                    if( json.ok == 1){
+
+                        alert('succeed!');
+
+
+
+                        $('.outNode tbody')[0].appendChild(
+                            toTr2(index, json.user, $('.fsNode')[0].files[0].name, ($('.fsNode')[0].files[0].size/1024).toFixed(2) +'KB',json.timer,0, json.hash, json.type))
+                        index++;
+
+                    }else{
+
+                        alert("failed!");
+                    }
+
+                    $('.fsNode').val('');
+                }
+            }
+        })
+
+
+
+
+        $('.manage1').on({
+            click() {
+                $.ajax({
+                    url: 'https://instantcloud.herokuapp.com/show/login',
+                    type: 'get',
+                    data: {
+                        'user': $('.userNode3').val(),
+                        'pass': $('.passNode3').val()
+                    },
+
+                    success: function (data) {
+                        if (data.ok == 1) {
+                            $('.manage2').modal('toggle');
+                            $('.manage').addClass('hide');
+                            $('.upload').removeClass('hide');
+
+                            /*
+                            $('.my-btn').hide();
+                            $('.namesNode').removeClass('hide');
+                            $('.namesNode span').html($('.userNode').val());
+                            $('.fileShowNode').removeClass('hide');
+                            $('.my-nav').addClass('hide');
+                            $('._dashboard').removeClass('hide');
+                            $('.welcome').addClass('hide');
+
+                            for(var i = 0; i < data.data.length; i++){
+                                $('.fileShowNode tbody')[0].appendChild(
+                                    toTr(index, data.data[i].LastName, (data.data[i].size/1024).toFixed(2)+'KB',data.data[i].lastTime,data.data[i].download,data.data[i].hashName));
+                                index++;
+                            } */
+
+                        } else {
+                            alert(data.msg);
+                            $('.myForm .form-group').addClass('has-error');
+                        }
+                    }
+                })
+            }
+        })
+
+
+
+
+
+
+        $('.btn-login').on({
+            click() {
+
+                $.ajax({
+                    url: 'https://instantcloud.herokuapp.com/show/goto_group',
+                    type: 'get',
+                    data: {
+                        'user': $('.userNode2').val(),
+                        'pass': $('.passNode2').val()
+                    },
+
+                    success: function (data) {
+
+                        if (data.ok == 1) {
+
+                            alert(data.msg);
+                            $('.goto_group').modal('toggle');
+                            $('.outNode tbody').empty();
+                            $('.outNode').removeClass('hide');
+                            $('.dashboard').html('Group: ' + $('.userNode2').val());
+                            $('.started').addClass('hide');
+                            $('.goto_a_group').addClass('hide');
+                            $('.create_a_group').addClass('hide');
+                            $('.dashboard-content').addClass('hide');
+                            $('.group-content').removeClass('hide');
+                            $('.error-content').addClass('hide');
+                            $('.search').addClass('hide');
+                            $('.search_button').addClass('hide');
+                            $('.search_box').addClass('hide');
+                            $('.manage').removeClass('hide');
+
+                            /*
+                            function toTr(index, userName, filesName, size, timer, download, hash)
+                               $('.outNode tbody')[0].appendChild(toTr(index, data.data[i].user, data.data[i].LastName,
+                            (data.data[i].size / 1024).toFixed(2) + 'KB', data.data[i].lastTime, data.data[i].download,
+                            data.data[i].hashName, data.data[i].type));
+                             */
+
+                            for(var i = 0; i < data.data.length; i++){
+                                $('.outNode tbody')[0].appendChild(toTr2(index, data.data[i].user, data.data[i].LastName,
+                                    (data.data[i].size / 1024).toFixed(2) + 'KB', data.data[i].lastTime, data.data[i].download,
+                                    data.data[i].hashName, data.data[i].type));
+                                index++;
+                            }
+
+                        } else {
+                            alert(data.msg);
+                            $('.myForm .form-group').addClass('has-error');
+                        }
+                    }
+                })
+            }
+        })
+
+
+
+        $('.btn-res').on({
+            click() {
+                $.ajax({
+                    url: 'https://instantcloud.herokuapp.com/show/create',
+                    type: 'get',
+                    data: {
+                        'user': $('.userNode').val(),
+                        'pass': $('.passNode').val()
+                    },
+                    success: function (data) {
+                        if (data.ok == 1) {
+                            alert(data.msg);
+                        } else {
+                            alert(data.msg);
+                            $('.myForm .form-group').addClass('has-error');
+                        }
+                    }
+                })
+            }
+        })
+
         
         
         $('.click-icon').on({
@@ -130,6 +399,56 @@
             }
             
         })
+
+
+        function toTr2(index, userName, filesName, size, timer, download, hash, type) {
+            var oTr = document.createElement('tr');
+            var mytime = new Date(timer);
+            var cur_time = new Date();
+            var diff = (cur_time - mytime)/(1000*60);
+            var time_remaining = (30 - diff);
+
+
+            if(time_remaining<0){
+                time_remaining = 0;
+            }
+
+
+            time_remaining = time_remaining.toFixed();
+
+            var t_r = time_remaining + " " + 'mins';
+
+            if(time_remaining == 0){
+                oTr.innerHTML =
+                    `<td>${index}</td>
+                 <td>${userName}</td>
+                 <td>${filesName}</td>
+                 <td>${size}</td>
+                 <td>${timer}</td>
+                 <td>${t_r}</td>
+                 <td class="dw">${download}</td>
+                 <td><a role="button" class="btn btn-default btn-danger btn-xs" disabled user="${userName}" hash="${hash}">Unavailable</a></td>
+                 <td><input type="button" value="Preview" class="btn btn-default btn-primary btn-xs btn-deleteNode"
+                 data-toggle="modal" data-target=".abc" data-type="${type}" disabled></td>`;
+
+            }else{
+                oTr.innerHTML =
+                    `<td>${index}</td>
+                 <td>${userName}</td>
+                 <td>${filesName}</td>
+                 <td>${size}</td>
+                 <td>${timer}</td>
+                 <td>${t_r}</td>
+                 <td class="dw">${download}</td>
+                 <td><a role="button" class="btn btn-default btn-success btn-xs btn-downl2" href="allfiles/${hash}" download="allfiles/${hash}"
+                 user="${userName}" hash="${hash}">Download</a></td>
+                 <td><input type="button" value="Preview" class="btn btn-default btn-primary btn-xs btn-show"
+                 data-toggle="modal" data-target=".abc" data-type="${type}"></td>`;
+            }
+            return oTr;
+        }
+
+
         
         
 
@@ -150,7 +469,7 @@
 
             var t_r = time_remaining + " " + 'mins';
 
-            if(diff > 6){
+            if(time_remaining <= 0){
                 oTr.innerHTML =
                     `<td>${index}</td>
                  <td>${userName}</td>
@@ -174,7 +493,7 @@
                  <td class="dw">${download}</td>
                  <td><a role="button" class="btn btn-default btn-success btn-xs btn-downl" href="allfiles/${hash}" download="allfiles/${hash}"
                  user="${userName}" hash="${hash}">Download</a></td>
-                 <td><input type="button" value="Preview" class="btn btn-default btn-primary btn-xs btn-deleteNode btn-show"
+                 <td><input type="button" value="Preview" class="btn btn-default btn-primary btn-xs btn-show"
                  data-toggle="modal" data-target=".abc" data-type="${type}"></td>`;
             }
             return oTr;
@@ -241,7 +560,13 @@
 
                     img.style.cssText = 'max-width: 100%; max-height: 100%';
 
-                    img.src = this.parentNode.parentNode.querySelector('.btn-downl').href;
+
+                    if((this.parentNode.parentNode.querySelector('.btn-downl') == null)){
+                        img.src = this.parentNode.parentNode.querySelector('.btn-downl2').href;
+                    }else{
+                        img.src = this.parentNode.parentNode.querySelector('.btn-downl').href;
+                    }
+
 
                     img.onload = function () {
                         $('.modal-body')[0].appendChild(img)
@@ -250,6 +575,7 @@
             }
 
         }, '.btn-show')
+
 
 
         $('body').on({

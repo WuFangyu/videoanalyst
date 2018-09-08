@@ -21,6 +21,202 @@ server.use('/show', showRouter);
 
 
 
+showRouter.use('/getfiles', (req,res)=>{
+    console.log(req.files);
+    var newName = req.files[0].path + path.parse(req.files[0].originalname).ext;
+
+    var hashName = req.files[0].filename + path.parse(req.files[0].originalname).ext;
+
+    var thisTime = new Date().toLocaleDateString()+' '+ new Date().toLocaleTimeString();
+
+    fs.rename(req.files[0].path, newName, (err)=>{
+        if(err){
+            console.log(err);
+        }else{
+            var Pool = mysql.createPool({
+                'host': 'us-cdbr-iron-east-01.cleardb.net',
+                'user': 'beb0ce369366d7',
+                'password': 'ff3e14a6',
+                'database': 'heroku_326ec9a75511f55'
+            });
+
+            Pool.getConnection((err, c)=>{
+                if(err){
+                    console.log(err);
+                    res.send({'ok':0, 'msg': 'database failed'});
+                    c.end();
+                }else{
+                    var _type = path.parse(req.files[0].originalname).ext;
+                    var user_name = req.body.Fsnames;
+                    c.query('INSERT INTO `'+req.body.Group_name+'` (`LastName`,`hashName`,`size`,`type`,`download`,`lastTime`, `user`) VALUES("'+req.files[0].originalname+'","'+hashName+'","'+req.files[0].size+'","'+path.parse(req.files[0].originalname).ext+'","0","'+thisTime+'","'+req.body.Fsnames+'");', (err, data)=>{
+                        if(err){
+                            console.log(err);
+                            res.send({'ok': 0, 'msg': 'failed!'});
+                        }else{
+                            res.send({'ok': 1, 'msg': 'succeeded', hash:hashName, timer:thisTime, type: _type, user: user_name});
+                        }
+                    })
+                };
+            });
+        }
+    });
+});
+
+
+
+
+showRouter.use('/login', (req,res)=>{
+    //console.log(req.query);
+    var Pool = mysql.createPool({
+        'host': 'us-cdbr-iron-east-01.cleardb.net',
+        'user': 'beb0ce369366d7',
+        'password': 'ff3e14a6',
+        'database': 'heroku_326ec9a75511f55'
+    });
+
+    Pool.getConnection((err, c)=>{
+        if(err){
+            console.log(err);
+            res.send({'ok':0, 'msg': 'database failed'});
+        }else{
+            c.query('SELECT user FROM `usertable` WHERE user="' + req.query.user + '"AND password="'
+                +req.query.pass+'";', (err, data)=>{
+                if(err){
+                    console.log(err);
+                    res.send({'ok':0, 'msg': 'database failed'});
+                    c.end();
+                }else{
+                    if(data.length>0){
+                        c.query('SELECT LastName, hashName, size, lastTime, download FROM `'+req.query.user+'`;', (err, data)=>{
+                            if(err){
+                                console.log(err);
+                                res.send({'ok':0, 'msg':'failed'});
+                            }else{
+                                res.send({'ok':1, 'msg':'succeeded', 'data': data});
+                            }
+                        })
+                        c.end();
+                    }else{
+                        res.send({'ok':0, 'msg': 'failed'});
+                        c.end();
+                    }
+                }
+            });
+        }
+    });
+});
+
+
+showRouter.use('/goto_group', (req,res)=>{
+    //console.log(req.query);
+    var Pool = mysql.createPool({
+        'host': 'us-cdbr-iron-east-01.cleardb.net',
+        'user': 'beb0ce369366d7',
+        'password': 'ff3e14a6',
+        'database': 'heroku_326ec9a75511f55'
+    });
+
+    Pool.getConnection((err, c)=>{
+        if(err){
+            console.log(err);
+            res.send({'ok':0, 'msg': 'database failed'});
+        }else{
+            c.query('SELECT user FROM `grouptable` WHERE user="'+ req.query.user + '"AND password="'
+                +req.query.pass+'";', (err, data)=>{
+                if(err){
+                    console.log(err);
+                    res.send({'ok':0, 'msg': 'database failed'});
+                    c.end();
+                }else{
+                    if(data.length>0){
+                        c.query('SELECT * FROM `'+req.query.user+'`;', (err, data)=>{
+                            if(err){
+                                console.log(err);
+                                res.send({'ok':0, 'msg':'failed'});
+                            }else{
+                                res.send({'ok':1, 'msg':'succeeded', 'data': data});
+                            }
+                        })
+                        c.end();
+                    }else{
+                        res.send({'ok':0, 'msg': 'failed'});
+                        c.end();
+                    }
+                }
+            });
+        }
+    });
+});
+
+
+
+showRouter.use('/create', (req,res)=>{
+    //console.log(req.query);
+    var Pool = mysql.createPool({
+        'host': 'us-cdbr-iron-east-01.cleardb.net',
+        'user': 'beb0ce369366d7',
+        'password': 'ff3e14a6',
+        'database': 'heroku_326ec9a75511f55'
+    });
+
+    Pool.getConnection((err, c)=>{
+        if(err){
+            console.log(err);
+            res.send({'ok':0, 'msg': 'database failed'});
+        }else{
+            if(req.query.user == '' || req.query.pass == ''){
+                console.log(err);
+                res.send({'ok':0, 'msg': 'empty!'});
+                return;
+            }
+
+            c.query('SELECT user FROM `grouptable` WHERE user="' + req.query.user + '";', (err, data)=>{
+                if(err){
+                    console.log(err);
+                    res.send({'ok':0, 'msg': 'database failed'});
+                    c.end();
+                }else{
+                    if(data.length>0){
+                        res.send({'ok':0, 'msg': 'Group ID has been taken'});
+                        c.end();
+                    }else{
+                        c.query('INSERT INTO `grouptable` (`user`, `password`) VALUES("'+req.query.user+'","'+
+                            req.query.pass+'");', (err, data)=>{
+                            if(err){
+                                console.log(err);
+                                res.send({'ok':0, 'msg': 'database failed'});
+                                c.end();
+                            }else{
+                                c.query(`CREATE TABLE ${req.query.user}
+                                ( 
+                                ID int(255) NOT NULL AUTO_INCREMENT,
+                                LastName varchar(255) NOT NULL,
+                                hashName varchar(255) NOT NULL,
+                                lastTime varchar(255) NOT NULL,
+                                type varchar(255),
+                                size varchar(255) NOT NULL,
+                                download varchar(255) NOT NULL,
+                                PRIMARY KEY(ID)
+                                )`, (err, data)=>{
+                                    if(err){
+                                        console.log(err);
+                                    }else{
+                                        res.send({'ok':1, 'msg': 'succeeded'});
+                                    };
+                                    c.end();
+                                })
+                            }
+                        })
+                    }
+                }
+            });
+        }
+    });
+});
+
+
+
+
 showRouter.use('/file_search', (req, res)=>{
 
     var Pool = mysql.createPool({
@@ -87,6 +283,62 @@ showRouter.use('/showFiles', (req, res)=>{
     })
 
 });
+
+
+
+showRouter.use('/addDownload', (req, res)=>{
+
+    console.log(req.query.hash);
+
+    var Pool = mysql.createPool({
+        'host': 'us-cdbr-iron-east-01.cleardb.net',
+        'user': 'beb0ce369366d7',
+        'password': 'ff3e14a6',
+        'database': 'heroku_326ec9a75511f55'
+    });
+
+    Pool.getConnection((err, c)=>{
+        if(err){
+            console.log(err);
+            res.send({'ok':0, 'msg': 'database failed'});
+        }else {
+            c.query('SELECT download FROM `allFiles` WHERE hashName="'+req.query.hash+'" AND user="'+req.query.user+'";', (err, data)=>{
+
+                console.log(data[0]);
+
+                if(err){
+                    console.log(err);
+                    res.send({'ok':0, 'msg': 'database failed'});
+                    c.end();
+                }else{
+                    var temp = Number(data[0].download)+1;
+                    c.query('UPDATE `allFiles` SET download="'+temp+'" WHERE hashName="'+req.query.hash+'" AND user="'+req.query.user+'";', (err, data)=>{
+                        if(err){
+                            console.log(err);
+                            res.send({'ok':0, 'msg': 'database failed'});
+                            c.end();
+                        }else{
+                            c.query('UPDATE `'+req.query.user+'` SET download="'+temp+'" WHERE hashName="'+req.query.hash+'";', (err, data)=>{
+                                if(err){
+                                    console.log(err);
+                                    res.send({'ok':0, 'msg': 'database failed'});
+                                    c.end();
+                                }else{
+                                    res.send({'ok':1, 'msg': 'succeeded'});
+                                }
+                                c.end();
+                            })
+                        }
+                    })
+                }
+
+            })
+
+        }
+    })
+
+})
+
 
 
 showRouter.use('/addDownload', (req, res)=>{
