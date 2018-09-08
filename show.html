@@ -245,19 +245,15 @@
                     var json = eval('('+ xhr.responseText + ')');
 
 
+                    var err_msg = json.msg;
+
                     if( json.ok == 1){
-
-                        alert('succeed!');
-
-
-
+                        alert("succeed!");
                         $('.outNode tbody')[0].appendChild(
                             toTr2(index, json.user, $('.fsNode')[0].files[0].name, ($('.fsNode')[0].files[0].size/1024).toFixed(2) +'KB',json.timer,0, json.hash, json.type))
                         index++;
-
                     }else{
-
-                        alert("failed!");
+                        alert(err_msg);
                     }
 
                     $('.fsNode').val('');
