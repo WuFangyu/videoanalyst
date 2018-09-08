@@ -48,7 +48,7 @@ showRouter.use('/getfiles', (req,res)=>{
                 }else{
                     var _type = path.parse(req.files[0].originalname).ext;
                     var user_name = req.body.Fsnames;
-                    c.query('INSERT INTO `'+req.body.Group_name+'` (`LastName`,`hashName`,`size`,`type`,`download`,`lastTime`, `user`) VALUES("'+req.files[0].originalname+'","'+hashName+'","'+req.files[0].size+'","'+path.parse(req.files[0].originalname).ext+'","0","'+thisTime+'","'+req.body.Fsnames+'");', (err, data)=>{
+                    c.query('INSERT INTO `LOWER('+req.body.Group_name+')` (`LastName`,`hashName`,`size`,`type`,`download`,`lastTime`, `user`) VALUES("'+req.files[0].originalname+'","'+hashName+'","'+req.files[0].size+'","'+path.parse(req.files[0].originalname).ext+'","0","'+thisTime+'","'+req.body.Fsnames+'");', (err, data)=>{
                         if(err){
                             console.log(err);
                             res.send({'ok': 0, 'msg': 'failed!'});
