@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d94a59e-c032-4a65-99f5-ac4182001e06" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nd.js" beforeDir="false" afterPath="$PROJECT_DIR$/nd.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/show.html" afterDir="false" />
     </list>
@@ -80,15 +81,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="3244" />
-          <entry key="js" value="230" />
+          <entry key="html" value="3256" />
+          <entry key="js" value="276" />
           <entry key="rnc" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="3244" />
-          <entry key="JavaScript" value="230" />
+          <entry key="HTML" value="3256" />
+          <entry key="JavaScript" value="276" />
           <entry key="RNG Compact" value="3" />
         </counts>
       </usages-collector>
@@ -136,20 +137,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nd.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="39" column="52" lean-forward="true" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
+            <state relative-caret-position="276">
+              <caret line="197" column="59" lean-forward="true" selection-start-line="197" selection-start-column="59" selection-end-line="197" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/show.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="250" column="39" selection-start-line="250" selection-start-column="39" selection-end-line="250" selection-end-column="39" />
+            <state relative-caret-position="122">
+              <caret line="131" column="76" selection-start-line="131" selection-start-column="67" selection-end-line="131" selection-end-column="76" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -171,7 +172,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>namesNode</find>
       <find>goto_group</find>
       <find>btn-setFiles</find>
       <find>bodytextNode</find>
@@ -180,7 +180,6 @@
       <find>modal-body</find>
       <find>Preview</find>
       <find>manage1</find>
-      <find>userNode2</find>
       <find>goto</find>
       <find>fsNode</find>
       <find>json.type</find>
@@ -201,6 +200,8 @@
       <find>setFiles</find>
       <find>https</find>
       <find>getfiles</find>
+      <find>userNode2</find>
+      <find>res</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -210,8 +211,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/nd.js" />
         <option value="$PROJECT_DIR$/show.html" />
+        <option value="$PROJECT_DIR$/nd.js" />
       </list>
     </option>
   </component>
@@ -321,12 +322,12 @@
       <workItem from="1535988392141" duration="27000" />
       <workItem from="1536098327880" duration="11229000" />
       <workItem from="1536130885064" duration="259000" />
-      <workItem from="1536325891229" duration="20151000" />
+      <workItem from="1536325891229" duration="20960000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81931000" />
+    <option name="totallyTimeSpent" value="82740000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -401,17 +402,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="39" column="52" lean-forward="true" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/show.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="250" column="39" selection-start-line="250" selection-start-column="39" selection-end-line="250" selection-end-column="39" />
+        <state relative-caret-position="122">
+          <caret line="131" column="76" selection-start-line="131" selection-start-column="67" selection-end-line="131" selection-end-column="76" />
           <folding>
             <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -425,6 +419,13 @@
             <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="197" column="59" lean-forward="true" selection-start-line="197" selection-start-column="59" selection-end-line="197" selection-end-column="59" />
         </state>
       </provider>
     </entry>

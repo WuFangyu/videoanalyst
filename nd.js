@@ -195,6 +195,7 @@ showRouter.use('/create', (req,res)=>{
                                 type varchar(255),
                                 size varchar(255) NOT NULL,
                                 download varchar(255) NOT NULL,
+                                user varchar(255) NOT NULL,
                                 PRIMARY KEY(ID)
                                 )`, (err, data)=>{
                                     if(err){

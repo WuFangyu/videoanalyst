@@ -234,6 +234,8 @@
                 FromNode.append('Fsnames', $('.userNode3').val());
                 FromNode.append('Group_name', $('.userNode2').val());
 
+                console.log($('.userNode2').val());
+
                 var xhr = new XMLHttpRequest();
 
                 xhr.open('post', 'https://instantcloud.herokuapp.com/show/getfiles', true);
