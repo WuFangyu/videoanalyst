@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d94a59e-c032-4a65-99f5-ac4182001e06" name="Default Changelist" comment="" />
+    <list default="true" id="2d94a59e-c032-4a65-99f5-ac4182001e06" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allfiles/0410136c1e4aa10545a0d8969f27399a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allfiles/36e8460e7ddd1159db98dd182cb9b854.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allfiles/38b6a05604ede49843e309d318f730b6.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allfiles/430eb46ebe4be58bbbd9bae62ae04e36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allfiles/7f801eeeb64d53d4ab980a6cd30220af.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allfiles/8232b1c551e3a8b03d990035f849dc71.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allfiles/84a1e3d481fc9e8e0f16247bb78a3fff.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allfiles/932157c3ef40208d4675f1012879e4b9.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allfiles/a897ee2ad39a83041e83d6a8df3596af.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allfiles/b8fa0a788b95e53198d885639cfcfa2b.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allfiles/b9d1d338b99bee53d01d798d4e76ac4f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allfiles/ebb8a729faaf78478a479350aa6743e0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/show.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -71,6 +87,7 @@
     <session id="-1033574698">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -102,14 +119,32 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1749449738">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="36" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="36" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="246" column="83" selection-start-line="246" selection-start-column="75" selection-end-line="246" selection-end-column="83" />
+            <state relative-caret-position="301">
+              <caret line="167" column="31" selection-start-line="167" selection-start-column="31" selection-end-line="167" selection-end-column="31" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#h1#0;n#html#0;n#!!top" expanded="true" />
@@ -123,8 +158,6 @@
                 <element signature="n#style#0;n#ul#0;n#div#5;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#li#0;n#ul#0;n#div#5;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#1;n#li#0;n#ul#0;n#div#5;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#li#1;n#ul#0;n#div#5;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#li#1;n#ul#0;n#div#5;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#5;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
@@ -136,8 +169,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nd.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="197" column="59" lean-forward="true" selection-start-line="197" selection-start-column="59" selection-end-line="197" selection-end-column="59" />
+            <state relative-caret-position="3678">
+              <caret line="197" column="59" selection-start-line="197" selection-start-column="59" selection-end-line="197" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -145,15 +178,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/show.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="617" column="32" lean-forward="true" selection-start-line="617" selection-start-column="32" selection-end-line="617" selection-end-column="32" />
+            <state relative-caret-position="179">
+              <caret line="213" column="15" selection-start-line="213" selection-start-column="15" selection-end-line="213" selection-end-column="15" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -168,7 +200,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>goto_group</find>
       <find>btn-setFiles</find>
       <find>bodytextNode</find>
       <find>type</find>
@@ -198,6 +229,7 @@
       <find>getfiles</find>
       <find>userNode2</find>
       <find>res</find>
+      <find>cop</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -206,9 +238,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/nd.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/show.html" />
-        <option value="$PROJECT_DIR$/nd.js" />
       </list>
     </option>
   </component>
@@ -229,6 +261,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="14" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="809" />
@@ -268,6 +301,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -279,7 +313,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -318,12 +351,13 @@
       <workItem from="1535988392141" duration="27000" />
       <workItem from="1536098327880" duration="11229000" />
       <workItem from="1536130885064" duration="259000" />
-      <workItem from="1536325891229" duration="21213000" />
+      <workItem from="1536325891229" duration="21521000" />
+      <workItem from="1537589525025" duration="193000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82993000" />
+    <option name="totallyTimeSpent" value="83494000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -335,7 +369,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="809" extended-state="0" />
+    <frame x="14" y="23" width="1440" height="809" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10288936" />
@@ -372,10 +406,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3678">
+          <caret line="197" column="59" selection-start-line="197" selection-start-column="59" selection-end-line="197" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="246" column="83" selection-start-line="246" selection-start-column="75" selection-end-line="246" selection-end-column="83" />
+        <state relative-caret-position="301">
+          <caret line="167" column="31" selection-start-line="167" selection-start-column="31" selection-end-line="167" selection-end-column="31" />
           <folding>
             <element signature="n#style#0;n#h1#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#h1#0;n#html#0;n#!!top" expanded="true" />
@@ -389,8 +430,6 @@
             <element signature="n#style#0;n#ul#0;n#div#5;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#li#0;n#ul#0;n#div#5;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#1;n#li#0;n#ul#0;n#div#5;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#li#1;n#ul#0;n#div#5;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#li#1;n#ul#0;n#div#5;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#5;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
@@ -398,24 +437,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="197" column="59" lean-forward="true" selection-start-line="197" selection-start-column="59" selection-end-line="197" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/show.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="617" column="32" lean-forward="true" selection-start-line="617" selection-start-column="32" selection-end-line="617" selection-end-column="32" />
+        <state relative-caret-position="179">
+          <caret line="213" column="15" selection-start-line="213" selection-start-column="15" selection-end-line="213" selection-end-column="15" />
           <folding>
             <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
