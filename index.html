@@ -4,286 +4,825 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
-    <title>InstantCloud</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./kaka.ico"/>
+    <title>VideoAnalyst</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <style>
-    ul{
-        list-style-type: none;
+
+
+    html{
+        min-height: 100%;
+        opacity: 0.9;
     }
+
+    section {
+        width: 42%;
+    }
+
+    video::-webkit-media-controls-overlay-play-button {
+        display: none;
+    }
+
+    .upload-btn-wrapper {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        margin-top: 10%;
+    }
+
+    .btn{
+        border: 2px solid gray;
+        color: gray;
+        background-color: white;
+        padding: 8vm 20vm;
+        border-radius: 8vm;
+        font-size: 2vmax;
+        font-weight: bold;
+        position: relative;
+        margin-left: 35%;
+    }
+
+    .upload-btn-wrapper input[type=file] {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+
+    .analyse-btn-wrapper{
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        margin-top: 10%;
+    }
+
+    #analyse{
+        border: 2px solid gray;
+        color: gray;
+        background-color: white;
+        padding: 8vm 20vm;
+        border-radius: 2%;
+        font-size: 2vmax;
+        font-weight: bold;
+        position: relative;
+        margin-left: 35%;
+    }
+
+    footer{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 10vm;
+        width: 100%;
+        overflow: hidden;
+    }
+
+
+
+
 </style>
 
-
-<h1 style="margin-left: 3%; color: #2aabd2" class="click-icon">
-    <img src="favicon.ico" style="width:6%">
-    InstantCloud
-</h1>
-<a style="float: right; margin-right: 10%; margin-bottom: 1%;" href="https://instantcloud.herokuapp.com/show.html" class="btn btn-info _dashboard hide">Go to the Dashboard!</a>
-
-<ul style="margin-left: 30%;" class="nav nav-pills my-nav">
-    <li role="presentation"><a href="https://instantcloud.herokuapp.com/show.html">Go to the Dashboard</a></li>
-    <li role="presentation"><a href="#"  data-toggle="modal" data-target=".login">Login/Register</a></li>
-    <li role="presentation"><a href="#">Other features updating</a></li>
-</ul>
-
-<!--
-<div class="form-group">
-    <input style="margin-left:90px; float: top; font-size:20px;" type="button" name="" class="btn btn-default btn-primary btn-setFiles dashboard" value="Go to the Dashboard!">
-</div>
--->
-
-<div class='container'>
-    <div class='row'>
-        <div class='col-md-3 col-md-offset-1'>
-            <!--
-            <input type='button' class='btn btn-default btn btn-primary my-btn' style="float:right; margin-right: 200px;"
-                   value='login/register' data-toggle="modal" data-target=".login">
-            -->
-        </div>
-    </div>
-</div>
-
-
-<!--
-<h1 style="margin-left: 30px">
-    <p style="float: top; font-size: 30px" class='namesNode hide'>Welcome
-        <span></span>
-    </p>
-</h1>
--->
-
-
-<div class="jumbotron">
-    <h1 style="margin-left: 30px" class="welcome">Welcome to <span style="color: #2aabd2; font-family:serif; font-weight: bold;">InstantCloud!</span></h1>
-    <h1 style="margin-left: 30px" class='namesNode hide'>Hello
-        <span></span>
+<div style="margin-bottom: 1%;">
+    <h1 style="margin-left: 3%; margin-right:3%; border-style: solid; width: 20%; float: top; font-size: 2.3vmax" class="click-icon">
+        <img src="kaka.ico" style="width:20%">
+        VideoAnalyst
     </h1>
-    <p style="margin-left: 40px">Download and upload whatever you want!</p>
-</div>
 
-
-<div class="container fileShowNode hide">
-    <table class='table text-center table-hover'>
-        <thead>
-        <tr>
-            <td>Number</td>
-            <td>Name</td>
-            <td>Size</td>
-            <td>Time</td>
-            <td>Download_time</td>
-            <td>Deleted</td>
-        </tr>
-        </thead>
-        <tbody>
-
-        <tr>
-            <!--
-            <td>1</td>
-            <td>asdada.jpg</td>
-            <td>21mb</td>
-            <td>2017/22</td>
-            <td>0</td>
-            <td><input type="button" name="" class='btn btn-default btn-danger btn-xs' value='delete'></td>
-            -->
-
-        </tr>
-        </tbody>
-    </table>
-    <form class="form-inline">
-        <div class="form-group">
-            <input type="file" class="fsNode" name="">
-        </div>
-        <div class="form-group">
-            <input type="button" name="" class="btn btn-default btn-primary btn-xs btn-setFiles" value="upload" data-toggle="modal" data-target=".upload">
-        </div>
-    </form>
-
-
-</div>
-
-
-<div class="modal fade uploaded" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Notice</h4>
-            </div>
-            <div class="modal-body bodytextNode">
-                <p>One fine body&hellip;</p>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-
-
-
-<div class="modal fade login" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title">Login/Register</h4>
-            </div>
-            <div class="modal-body">
-                <form class='myForm'>
-                    <div class='form-group'>
-                        <label>UserID:</label>
-                        <input type="" name="" class='form-control userNode'>
-                    </div>
-                    <div class='form-group'>
-                        <label>Password:</label>
-                        <input type="password" name="" class='form-control passNode'>
-                    </div>
-                    <input type='button' class='btn btn-default btn btn-primary btn-login'
-                           value='login'>
-                    <input type='button' class='btn btn-default btn btn-info btn-res'
-                           value='register'>
-                </form>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<div class="" style="margin-left:6%;">
-    <a style="font-size: 30px; color:#2b669a" class="info">
-    How to use InstantCloud? (Click here)
-    </a>
-    <ul style="font-size: 25px; color:black; margin-top: 1%;" class="form-group info-content hide">
-        <li>Generally, InstantCloud is a online <span style="font-weight: bold; color:orangered">data sharing</span> and <span style="font-weight: bold; color: orangered">storage webapp</span>.</li>
-        <li>You can either upload your files to the <a style="color:orangered;" href="https://instantcloud.herokuapp.com/show.html">Dashboard</a> or a <a href="https://instantcloud.herokuapp.com/show.html" style="color:orangered;">Secret Group.</a></li>
-        <li>If you want everyone can access your file then upload it to the Dashboard.</li>
-        <li>If you want just someone can access your file then upload it to a Secret Group.</li>
-        <li>You need to <a style="color: orangered" href="#"  data-toggle="modal" data-target=".login">register</a> an account to upload your files.</li>
-    </ul>
-</div>
-
-<!-- Footer -->
-<footer class="page-footer font-small" style="margin-top: 20%">
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3" style="float: bottom">© 2018 Offered by:
-        <a href="http://fangyu.io">Fangyu Wu</a>
+    <div class="jumbotron" style="margin-top: 6%" id="jump">
+        <h2 style="margin-left: 26%; font-size: 4vmax">Welcome to VideoAnalyst!</h2>
+        <ul style="margin-left: 32%; margin-top: 2%" id="login_before">
+            <a style=" color: black; font-size: 3.5vmin; font-family: serif; border-top:solid" href="#" data-toggle="modal" data-target=".login">Login/Register To Record Your Data</a>
+        </ul>
     </div>
-    <!-- Copyright -->
 
-</footer>
-<!-- Footer -->
+    <div class="modal fade login" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Login/Register</h4>
+                </div>
+                <div class="modal-body" style="color: black">
+                    <form class='myForm' style="color: black">
+                        <div class='form-group' style="color: black">
+                            <label>UserID:</label>
+                            <input type="" name="" class='form-control userNode'>
+                        </div>
+                        <div class='form-group' style="color: black">
+                            <label>Password:</label>
+                            <input type="password" name="" class='form-control passNode'>
+                        </div>
+                        <input type='button' class='btn-login'
+                               style="color: black" value='login'>
+                        <input type='button' class='btn-res'
+                               style="color: black" value='register'>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+
+    <div id="front-page" class="hidden">
+        <div id="chart" class="hidden" style="width: 50vmax; height: 32vmax; border-style: none; float: right; margin-right: 3vmax"></div>
+
+        <div class="upload-btn-wrapper" style="width: 90%; margin-left: 5%; margin-right: 5%; height: 50%; border-style: none">
+            <button class="btn">Upload your video here</button>
+            <input type="file" id="file-to-upload" accept="video/mp4" />
+        </div>
+
+        <div id="video-demo-container" style="float: left; margin-left: 5vmax; border: black; border: none;" class="hidden">
+            <video id="main-video" controls style="height: 30vmax; width: 40vmax; margin-bottom: 3%">
+                <source type="video/mp4">
+            </video>
+        </div>
+
+        <canvas id="video-canvas" class="hidden"
+                style="height: 20vmax; width: 30vmax; float: top; border-style: none">
+        </canvas>
+
+        <div class="analyse-btn-wrapper hidden" style="width: 40%; height: 32vmax; float: right; margin-top: 0; margin-left: 5%; margin-right: 8%;">
+            <button style="margin-top: 28%" onclick="take_me()" id="analyse">Start Analyzing</button>
+        </div>
+
+        <section style="float: left; border-style: none; height: 30vmax; margin-left: 3vmax" id="pie_chart_wrapper" class="hidden">
+            <canvas id="pie_chart"></canvas>
+        </section>
+
+        <section style="float: left; border-style: none; height: 30vmax; margin-left: 2vmax" id="pie_chart_2_wrapper"; class="hidden">
+            <canvas id="pie_chart_2"></canvas>
+        </section>
+
+        <div id="range" style="border-style: none; float: left; width: 40%; margin-left: 8vmax; height: 30vmax" class="hidden">
+        </div>
+
+        <div id="total" style="border-style: none; float: left; width: 40%; margin-left: 0%; height: 30vmax" class="hidden">
+        </div>
+
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer id="footer_id" class="page-footer font-small" style="margin-top: 20%; float: bottom; width: 100%; border-top: solid; position: absolute;">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3" style="float: bottom;">© 2018 Offered by:
+            <a href="http://fangyu.io">Fangyu Wu</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+</div>
 
 
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script type="text/javascript">
-    (() => {
+<script src="./plotly.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 
-        let index = 1;
+<script>
+    /*
 
-        function toTr(index, filesName, size, timer, download, hash){
-            var oTr = document.createElement('tr');
+        var audioContext = new(window.AudioContext || window.webkitAudioContext)();
+        var reader = new FileReader();
+        var myBuffer;
 
-            $(oTr).attr('hash', hash);
+        const sampleRate = 16000;
+        const numberOfChannels = 1;
 
-            oTr.innerHTML =
-                `<td>${index}</td>
-                 <td>${filesName}</td>
-                 <td>${size}</td>
-                 <td>${timer}</td>
-                 <td>${download}</td>
-                 <td><input type="button" class="btn btn-default btn-danger btn-xs btn-deleteNode" value="delete" data-toggle="modal" data-target=".upload"></td>`;
-            return oTr;
-        }
+        var myWav;
 
 
+        document.getElementById('file-to-upload').onchange = function() {
 
-        $('body').on({
-            'click': function(){
+            reader.onload = function () {
+                var videoFileAsBuffer = reader.result; // arraybuffer
+                audioContext.decodeAudioData(videoFileAsBuffer).then(function (decodedAudioData) {
 
-                var _this = this;
+                    var duration = decodedAudioData.duration;
 
-                $.ajax({
-                    url:'https://instantcloud.herokuapp.com/login/removeFile',
-                    type: 'get',
-                    data:{
-                        user: $('.userNode').val(),
-                        hash: $(_this.parentNode.parentNode).attr('hash')
+                    var offlineAudioContext = new OfflineAudioContext(numberOfChannels, sampleRate * duration, sampleRate);
+                    var soundSource = offlineAudioContext.createBufferSource();
+
+                    myBuffer = decodedAudioData;
+                    soundSource.buffer = myBuffer;
+                    soundSource.connect(offlineAudioContext.destination);
+                    soundSource.start();
+
+                    offlineAudioContext.startRendering().then(function (renderedBuffer) {
+                        console.log(renderedBuffer); // outputs audiobuffer
+
+                        //////////////////////////////////////////////
+
+                        myWav = renderedBuffer;
+
+
+
+                        ////////////////////////////////////////////////
+                    }).catch(function (err) {
+                        console.log('Rendering failed: ' + err);
+                    });
+                });
+            };
+
+            reader.readAsArrayBuffer(this.files[0]); // video file
+        };
+
+
+
+        <!-- Speech SDK USAGE -->
+
+        // status fields and start button in UI
+        var phraseDiv;
+        var startRecognizeOnceAsyncButton;
+
+        // subscription key and region key for speech services.
+        var subscriptionKey, regionKey;
+        var SpeechSDK;
+        var recognizer;
+
+        document.addEventListener("DOMContentLoaded", function () {
+            startRecognizeOnceAsyncButton = document.getElementById("startRecognizeOnceAsyncButton");
+            subscriptionKey = document.getElementById("subscriptionKey");
+            regionKey = document.getElementById("regionKey");
+            phraseDiv = document.getElementById("phraseDiv");
+
+            startRecognizeOnceAsyncButton.addEventListener("click", function () {
+                startRecognizeOnceAsyncButton.disabled = true;
+                phraseDiv.innerHTML = "";
+
+                // if we got an authorization token, use the token. Otherwise use the provided subscription key
+                var speechConfig;
+
+                speechConfig = SpeechSDK.SpeechConfig.fromSubscription("1cb6846c316844148634cc9fad09cc47", "westus");
+
+                speechConfig.speechRecognitionLanguage = "en-US";
+
+                var audioConfig  = SpeechSDK.AudioConfig.fromWavFileInput(myWav);
+
+
+                console.log(myWav);
+
+                var buffer = myWav;
+
+
+                var worker = new Worker('recorderWorker.js');
+
+
+                worker.postMessage({
+                    command: 'init',
+                    config: {sampleRate: 44100}
+                });
+
+
+                worker.onmessage = function( e ) {
+                    var blob = e.data;
+                    // this is would be your WAV blob
+                };
+
+                worker.postMessage({
+                    command: 'record',
+                    buffer: [
+                        buffer.getChannelData(0),
+                        buffer.getChannelData(1)
+                    ]
+                });
+
+                worker.postMessage({
+                    command: 'exportWAV',
+                    type: 'audio/wav'
+                });
+
+
+                recognizer = new SpeechSDK.SpeechRecognizer(speechConfig, audioConfig);
+
+                recognizer.recognizeOnceAsync(
+                    function (result) {
+                        startRecognizeOnceAsyncButton.disabled = false;
+                        phraseDiv.innerHTML += result.text;
+                        window.console.log(result);
+
+                        recognizer.close();
+                        recognizer = undefined;
                     },
+                    function (err) {
+                        startRecognizeOnceAsyncButton.disabled = false;
+                        phraseDiv.innerHTML += err;
+                        window.console.log(err);
 
-                    success: function(data) {
-                        console.log(data);
+                        recognizer.close();
+                        recognizer = undefined;
+                    });
+            });
 
-                        if(data.ok==1){
-                          //  $('.upload').modal('toggle');
-                            $('.bodytextNode p').html(data.msg);
-                            _this.parentNode.parentNode.remove();
-                        }else{
-                            $('.bodytextNode p').html(data.msg);
-                        }
-                    }
-                })
+            if (!!window.SpeechSDK) {
+                SpeechSDK = window.SpeechSDK;
+                startRecognizeOnceAsyncButton.disabled = false;
 
-            }
-        }, '.btn-deleteNode')
+                document.getElementById('content').style.display = 'block';
+                document.getElementById('warning').style.display = 'none';
 
-
-        $('.info').on({
-            'click' : function () {
-                $('.info-content').removeClass('hide');
-            }
-        })
-
-
-
-        $('.btn-setFiles').on({
-            'click':function () {
-                var FromNode = new FormData();
-
-                FromNode.append('files', $('.fsNode')[0].files[0]);
-                FromNode.append('Fsnames', $('.userNode').val());
-
-                var xhr = new XMLHttpRequest();
-
-                xhr.open('post', 'https://instantcloud.herokuapp.com/login/getfiles', true);
-
-                xhr.send(FromNode);
-
-                xhr.onload = function(){
-                    var json = eval('('+ xhr.responseText + ')');
-
-
-                    if( json.ok == 1){
-                        $('.bodytextNode p').html('succeeded!');
-
-
-                        $('.fileShowNode tbody')[0].appendChild(
-                            toTr(index, $('.fsNode')[0].files[0].name, ($('.fsNode')[0].files[0].size/1024).toFixed(2) +'KB',json.timer,0,json.hash));
-
-                        index++;
-
-                    }else{
-                        $('.bodytextNode p').html(json.msg);
-                    }
-
-                    $('.fsNode').val('');
+                // in case we have a function for getting an authorization token, call it.
+                if (typeof RequestAuthorizationToken === "function") {
+                    RequestAuthorizationToken();
                 }
             }
-        })
+        });
+
+    */
+</script>
+
+<script>
+
+    var trace1 = {
+        y: [0],
+        mode: 'lines',
+        name: 'happiness',
+        line: {
+            color: 'rgb(0, 255, 1)'
+        }
+    };
+
+    var trace2 = {
+        y: [0],
+        mode: 'lines',
+        name: 'sadness',
+        line: {
+            color: 'rgb(29, 64, 219)'
+        }
+    };
 
 
-        $('.my-btn').on({
-            click() {
-                $('.myForm .form-group').removeClass('has-error');
-                $('.userNode').val('');
-                $('.passNode').val('');
+    var trace3 = {
+        y: [0],
+        mode: 'lines',
+        name: 'fear',
+        line: {
+            color: 'purple'
+        }
+    };
+
+
+    var trace4 = {
+        y: [0],
+        mode: 'lines',
+        name: 'contempt',
+        line: {
+            color: 'rgb(255, 39, 82)'
+        }
+    };
+
+
+    var trace6 = {
+        y: [0],
+        mode: 'lines',
+        name: 'surprise',
+        line: {
+            color: 'orange'
+        }
+    };
+
+    var trace7 = {
+        y: [0],
+        mode: 'lines',
+        name: 'disgust'
+    };
+
+    var data = [trace1, trace2, trace3, trace4, trace6, trace7];
+
+    var layout = {
+        title: 'Real time Sentiment Monitoring'
+    };
+
+    Plotly.newPlot('chart', data, layout);
+
+
+    var _CANVAS = document.querySelector("#video-canvas"),
+        _CTX = _CANVAS.getContext("2d"),
+        _VIDEO = document.querySelector("#main-video");
+
+
+    /*
+
+    // Upon click this should should trigger click on the #file-to-upload file input element
+    // This is better than showing the not-good-looking file input element
+    document.querySelector("#upload-button").addEventListener('click', function () {
+        document.querySelector("#file-to-upload").click();
+    });*/
+
+    // When user chooses a MP4 file
+    document.querySelector("#file-to-upload").addEventListener('change', function () {
+
+
+        $('#video-demo-container').removeClass('hidden');
+
+        $('.analyse-btn-wrapper').removeClass('hidden');
+
+        $('.upload-btn-wrapper').addClass('hidden');
+
+        $('#pie_chart_2_wrapper').removeClass('hidden');
+
+        $('#pie_chart_wrapper').removeClass('hidden');
+
+        $('#range').removeClass('hidden');
+
+        $('#total').removeClass('hidden');
+
+        $('#footer_id').addClass('hidden');
+
+        $('#jump').addClass('hidden');
+
+        // Validate whether MP4
+        if (['video/mp4'].indexOf(document.querySelector("#file-to-upload").files[0].type) == -1) {
+            alert('Error : Only MP4 format allowed');
+            return;
+        }
+
+        // Object Url as the video source
+        document.querySelector("#main-video source").setAttribute('src', URL.createObjectURL(document.querySelector("#file-to-upload").files[0]));
+
+
+        //    document.querySelector("#audio_id").setAttribute('src', URL.createObjectURL(document.querySelector("#file-to-upload").files[0]));
+
+        // Load the video and show it
+        _VIDEO.load();
+        //     _VIDEO.style.display = 'inline';
+
+        // Load metadata of the video to get video duration and dimensions
+        _VIDEO.addEventListener('loadedmetadata', function () {
+            console.log(_VIDEO.duration);
+            //  var video_duration = _VIDEO.duration,
+
+            // Set canvas dimensions same as video dimensions
+            _CANVAS.width = _VIDEO.videoWidth;
+            _CANVAS.height = _VIDEO.videoHeight;
+        });
+    });
+
+
+    // Seeking video to the specified duration is complete
+    document.querySelector("#main-video").addEventListener('timeupdate', function () {
+        // Re-enable the dropdown and show the Download link
+    });
+
+
+    /*
+    // On clicking the Download button set the video in the canvas and download the base-64 encoded image data
+    document.querySelector("#get-thumbnail").addEventListener('click', function () {
+
+
+        _CTX.drawImage(_VIDEO, 0, 0);
+
+        document.querySelector("#get-thumbnail").setAttribute('href', _CANVAS.toDataURL());
+        document.querySelector("#get-thumbnail").setAttribute('download', 'thumbnail.png');
+    });*/
+
+
+    // var sourceImageUrl = _CANVAS.toDataURL();
+
+
+    var i = 0;
+
+    function take_me() {
+        // take snapshot and get image data
+
+        $(".analyse-btn-wrapper").addClass("hidden");
+
+        $("#chart").removeClass('hidden');
+
+        var enthsuiasm = 0;
+        var confidence = 0;
+        var positive_sentiment = 0;
+
+        var happy_sum = 0;
+        var sadness_sum = 0;
+        var disgust_sum = 0;
+        var fear_sum = 0;
+        var contempt_sum = 0;
+        var neutral_sum = 0;
+        var surprise_sum = 0;
+        var age_sum = 0;
+
+
+        var age_hi = 0;
+        var age_low = 100;
+
+        var smile_num = 0;
+
+        var track_time = 0;
+
+
+        var begin = setInterval(function () {
+
+
+            if (i >= Math.floor(_VIDEO.duration)) {
+                clearInterval(begin);
+
+                var total_sum = happy_sum + sadness_sum + neutral_sum + fear_sum + disgust_sum + contempt_sum + surprise_sum;
+
+                var ctx = $("#pie_chart").get(0).getContext("2d");
+
+
+                var data = {
+                    datasets: [{
+                        data: [happy_sum, sadness_sum, disgust_sum, fear_sum, contempt_sum, surprise_sum],
+                        backgroundColor: ['rgb(0, 255, 1)', 'rgb(29, 64, 219)', 'blue', 'purple', 'rgb(255, 39, 82)', 'orange']
+                    }],
+
+                    // These labels appear in the legend and in the tooltips when hovering different arcs
+                    labels: [
+                        'happiness',
+                        'sadness',
+                        'disgust',
+                        'fear',
+                        'contempt',
+                        'surprise'
+                    ],
+                };
+
+                var myPieChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: data,
+                    options: {
+                        title: {
+                            display: true,
+                            text: 'Sentiment Distribution',
+                            fontSize: 20
+                        },
+                    }
+                });
+
+                var ctx_2 = $("#pie_chart_2").get(0).getContext("2d");
+
+
+
+
+                var smile_ratio = (smile_num / track_time);
+
+                var non_smile = (1 - smile_ratio);
+
+                var data_2 = {
+                    datasets: [{
+                        data: [smile_ratio * 100, non_smile * 100],
+                        backgroundColor: ['orange', 'blue']
+                    }],
+
+                    // These labels appear in the legend and in the tooltips when hovering different arcs
+                    labels: [
+                        'Enthusiasm Score',
+                        'offset',
+                    ],
+                };
+
+                enthsuiasm = smile_ratio*100 + 30;
+
+                if(enthsuiasm > 100){
+                    enthsuiasm = 100;
+                }
+
+                var myPieChart_2 = new Chart(ctx_2, {
+                    type: 'doughnut',
+                    data: data_2,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    options: {
+                        title: {
+                            display: true,
+                            text: 'Enthusiasm Score',
+                            fontSize: 20
+                        },
+                    }
+                });
+
+                console.log("age:" + age_sum / track_time);
+
+
+                var level = age_sum/track_time;
+
+                var degrees = age_hi - level,
+                    radius = .5;
+                var radians = degrees * Math.PI / 180;
+                var x = radius * Math.cos(radians);
+                var y = radius * Math.sin(radians);
+
+                var mainPath = 'M -.0 -0.025 L .0 0.025 L ',
+                    pathX = String(x),
+                    space = ' ',
+                    pathY = String(y),
+                    pathEnd = ' Z';
+
+                var path = mainPath.concat(pathX,space,pathY,pathEnd);
+
+                var data = [{ type: 'scatter',
+                    x: [0], y:[0],
+                    marker: {size: 28, color:'850000'},
+                    showlegend: false,
+                    name: 'age',
+                    text: level,
+                    hoverinfo: 'text+name'},
+                    { values: [50/6, 50/6, 50/6],
+                        rotation: 90,
+                        text: [ 'lower-bound','Average',
+                            'upper-bound'],
+                        textinfo: 'text',
+                        textposition:'inside',
+                        marker: {colors:['rgba(14, 127, 0, .5)', 'rgba(110, 154, 22, .5)',
+                                'rgba(170, 202, 42, .5)']},
+                        labels: [age_low, age_sum/track_time, age_hi],
+                        hoverinfo: 'label',
+                        hole: .5,
+                        type: 'pie',
+                        showlegend: false
+                    }];
+
+                var layout = {
+                    shapes:[{
+                        type: 'path',
+                        path: path,
+                        fillcolor: '850000',
+                        line: {
+                            color: '850000'
+                        }
+                    }],
+                    title: 'Age Range',
+                    height: 450,
+                    width: 450,
+                    xaxis: {zeroline:false, showticklabels:false,
+                    showgrid: false, range: [-1, 1]},
+                yaxis: {zeroline:false, showticklabels:false,
+                    showgrid: false, range: [-1, 1]}
+            };
+                Plotly.newPlot('range', data, layout);
+
+
+
+
+                positive_sentiment = (happy_sum/total_sum) * 100;
+
+                confidence = (surprise_sum*0.15 + happy_sum*0.7 + neutral_sum*0.15)/total_sum * 100;
+
+                data = [{
+                    type: 'scatterpolar',
+                    r: [enthsuiasm, positive_sentiment, confidence],
+                    theta: ['Enthusiasm Score','Positive Sentiment','Confidence'],
+                    fill: 'toself'
+                }];
+
+                layout = {
+                    title: 'Total Sentiment Scores',
+                    polar: {
+                        radialaxis: {
+                            visible: true,
+                            range: [0, 100]
+                        }
+                    },
+                    showlegend: false
+                };
+
+                Plotly.newPlot("total", data, layout);
+
             }
-        })
 
+            _VIDEO.currentTime = i;
+
+
+            _VIDEO.ontimeupdate = function () {
+
+                _CTX.drawImage(_VIDEO, 0, 0);
+
+
+                var sourceImageUrl = _CANVAS.toDataURL();
+
+                // take snapshot and get image data
+                base_image = new Image();
+                base_image.src = sourceImageUrl;
+
+
+                base_image.onload = function () {
+
+
+                    let data = sourceImageUrl;
+
+                    var params = {
+                        "returnFaceId": "true",
+                        "returnFaceLandmarks": "false",
+                        "returnFaceAttributes":
+                            "age,gender,headPose,smile,facialHair,glasses,emotion," +
+                            "hair,makeup,occlusion,accessories,blur,exposure,noise"
+                    };
+
+                    var uriBase =
+                        "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
+
+                    fetch(data)
+                        .then(res => res.blob())
+                        .then(blobData => {
+                            $.post({
+                                url: uriBase + "?" + $.param(params),
+                                contentType: "application/octet-stream",
+                                headers: {
+                                    'Ocp-Apim-Subscription-Key': 'd08098dcab6c4cbda1ccf94fc2ef9646'
+                                },
+                                processData: false,
+                                data: blobData
+                            })
+                                .done(function (data) {
+                                    // Show formatted JSON on webpage.
+
+                                    var json_data = JSON.stringify(data);
+
+                                    $("#responseTextArea").val(json_data);
+
+                                    var obj = JSON.parse(json_data);
+
+
+                                    if (!jQuery.isEmptyObject(obj)) {
+                                        var happy = obj[0].faceAttributes.emotion.happiness;
+                                        var sadness = obj[0].faceAttributes.emotion.sadness;
+                                        var disgust = obj[0].faceAttributes.emotion.disgust;
+                                        var fear = obj[0].faceAttributes.emotion.fear;
+                                        var contempt = obj[0].faceAttributes.emotion.contempt;
+                                        var neutral = obj[0].faceAttributes.emotion.neutral;
+                                        var surprise = obj[0].faceAttributes.emotion.surprise;
+                                        var age = obj[0].faceAttributes.age;
+                                        var smile = obj[0].faceAttributes.smile;
+
+
+                                        if(age > age_hi){
+                                            age_hi = age;
+                                        }
+
+                                        if(age < age_low){
+                                            age_low = age;
+                                        }
+
+                                        if (smile >= 0.5) {
+                                            smile_num++;
+                                        }
+
+
+                                        happy_sum += happy;
+                                        sadness_sum += sadness;
+                                        disgust_sum += disgust;
+                                        fear_sum += fear;
+                                        contempt_sum += contempt;
+                                        neutral_sum += neutral_sum;
+                                        surprise_sum += surprise;
+                                        age_sum += age;
+                                        track_time++;
+                                        /*
+
+                                        console.log("happy:"+ happy);
+                                        console.log("neutral:"+ neutral);
+                                        console.log("sad:"+ sadness);
+                                        console.log("disgust:"+ disgust);
+                                        console.log("contempt:"+ contempt);
+                                        console.log("surprise:"+ surprise);
+                                        console.log("fear:"+ fear);
+                                        */
+
+                                        Plotly.extendTraces('chart', {y: [[happy], [sadness], [fear], [contempt], [surprise], [disgust]]}, [0, 1, 2, 3, 4, 5]);
+
+                                    }
+
+                                    console.log("success");
+                                })
+
+                                .fail(function (jqXHR, textStatus, errorThrown) {
+                                    // Display error message.
+                                    var errorString = (errorThrown === "") ?
+                                        "Error. " : errorThrown + " (" + jqXHR.status + "): ";
+                                    errorString += (jqXHR.responseText === "") ?
+                                        "" : (jQuery.parseJSON(jqXHR.responseText).message) ?
+                                            jQuery.parseJSON(jqXHR.responseText).message :
+                                            jQuery.parseJSON(jqXHR.responseText).error.message;
+                                    alert(errorString);
+                                })
+                        });
+                }
+
+            }
+
+            i = i + 1;
+
+        }, 3010);
+
+    };
+</script>
+
+
+<script type="text/javascript">
+    (() => {
 
         $('.btn-login').on({
             click() {
                 $.ajax({
-                    url: 'https://instantcloud.herokuapp.com/login/login',
+                    url: 'http://localhost:9000/login/login',
                     type: 'get',
                     data: {
                         'user': $('.userNode').val(),
@@ -293,21 +832,8 @@
                     success: function (data) {
                         if (data.ok == 1) {
                             $('.login').modal('toggle');
-                            //alert(data.msg);
-                            $('.my-btn').hide();
-                            $('.namesNode').removeClass('hide');
-                            $('.namesNode span').html($('.userNode').val());
-                            $('.fileShowNode').removeClass('hide');
-                            $('.my-nav').addClass('hide');
-                            $('._dashboard').removeClass('hide');
-                            $('.welcome').addClass('hide');
-
-
-                            for(var i = 0; i < data.data.length; i++){
-                                $('.fileShowNode tbody')[0].appendChild(
-                                    toTr(index, data.data[i].LastName, (data.data[i].size/1024).toFixed(2)+'KB',data.data[i].lastTime,data.data[i].download,data.data[i].hashName));
-                                index++;
-                            }
+                            $('#login_before').addClass('hidden');
+                            $('#front-page').removeClass('hidden');
 
                         } else {
                             alert(data.msg);
@@ -322,7 +848,7 @@
         $('.btn-res').on({
             click() {
                 $.ajax({
-                    url: 'https://instantcloud.herokuapp.com/login/res',
+                    url: 'http://localhost:9000/login/res',
                     type: 'get',
                     data: {
                         'user': $('.userNode').val(),
@@ -343,8 +869,8 @@
 
         $('.click-icon').on({
 
-            'click':function () {
-                location.href = ('https://instantcloud.herokuapp.com/index.html');
+            'click': function () {
+                location.href = ('http://localhost:9000/index.html');
             }
 
         })
