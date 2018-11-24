@@ -822,7 +822,7 @@
         $('.btn-login').on({
             click() {
                 $.ajax({
-                    url: 'http://localhost:9000/login/login',
+                    url: 'http://videoanalyst.herokuapp.com/login/login',
                     type: 'get',
                     data: {
                         'user': $('.userNode').val(),
@@ -848,7 +848,7 @@
         $('.btn-res').on({
             click() {
                 $.ajax({
-                    url: 'http://localhost:9000/login/res',
+                    url: 'http://videoanalyst.herokuapp.com/login/res',
                     type: 'get',
                     data: {
                         'user': $('.userNode').val(),
@@ -870,7 +870,7 @@
         $('.click-icon').on({
 
             'click': function () {
-                location.href = ('http://localhost:9000/index.html');
+                location.href = ('http://videoanalyst.herokuapp.com/index.html');
             }
 
         })
