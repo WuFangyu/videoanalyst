@@ -19,10 +19,10 @@ server.use('/login', loginRouter);
 loginRouter.use('/res', (req,res)=>{
     //console.log(req.query);
     var Pool = mysql.createPool({
-        'host': 'us-cdbr-iron-east-01.cleardb.net',
-        'user': 'beb0ce369366d7',
-        'password': 'ff3e14a6',
-        'database': 'heroku_326ec9a75511f55'
+        'host': 'host_url',
+        'user': 'user_name',
+        'password': 'your_password',
+        'database': 'database_name'
     });
 
     Pool.getConnection((err, c)=>{
@@ -67,10 +67,10 @@ loginRouter.use('/res', (req,res)=>{
 loginRouter.use('/login', (req,res)=>{
     //console.log(req.query);
     var Pool = mysql.createPool({
-        'host': 'us-cdbr-iron-east-01.cleardb.net',
-        'user': 'beb0ce369366d7',
-        'password': 'ff3e14a6',
-        'database': 'heroku_326ec9a75511f55'
+        'host': 'host_url',
+        'user': 'user_name',
+        'password': 'your_password',
+        'database': 'database_name'
     });
 
     Pool.getConnection((err, c)=>{
